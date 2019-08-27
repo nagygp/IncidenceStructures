@@ -1,0 +1,12 @@
+#
+# IncidenceStructures: GAP implementation of abstract point-line incidence structures
+#
+# This file runs package tests. It is also referenced in the package
+# metadata in PackageInfo.g.
+#
+LoadPackage( "IncidenceStructures" );
+
+TestDirectory(DirectoriesPackageLibrary( "IncidenceStructures", "tst" ),
+  rec(exitGAP := true));
+
+FORCE_QUIT_GAP(1); # if we ever get here, there was an error
