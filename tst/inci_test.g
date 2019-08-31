@@ -1,4 +1,4 @@
-LoadPackage("IncidenceStructures");
+LoadPackage("IncidenceStructures", false);
 
 s:=IncidenceStructureByBlocks([1..3],[[1],[1,2],[1,2,3]]);
 PointsOfIncidenceStructure(s);
@@ -21,6 +21,7 @@ SetInfoLevel(InfoIncidenceStructures,1);
 CanonicalLabellingOfIncidenceStructure(s);
 StructureDescription(AutomorphismGroup(s));
 
-t:=IncidenceStructureByBlocks( "rozi", ["or","iz","rz","oi","ir","oz"] );
+t:=IncidenceStructureByBlocks( "rozi", 
+    ["or","iz","rz","oi","ir","oz"] );
 Isomorphism(s,t);
 StructureDescription(AutomorphismGroup(t));
