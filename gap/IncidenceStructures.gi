@@ -207,7 +207,8 @@ function( s )
 	else
 		outneigh := List( s!.bmat, r -> ListBlist( [1..nrp], r ) );
 	fi;
-	Info( InfoIncidenceStructures, 1, "<outneigh> parameter for BLISS command: ", outneigh);
+	Info( InfoIncidenceStructures, 1, "BLISS_BIPARTITE_CANONICAL_LABELING called" );
+	Info( InfoIncidenceStructures, 2, "<outneigh> parameter for BLISS command: ", outneigh );
 	cl := BLISS_BIPARTITE_CANONICAL_LABELING( nrp, nrb, outneigh, ucolours, lcolours );
 #	cl := BlissBipartiteCanonicalLabeling( nrp, nrb, outneigh, ucolours, lcolours );
 	if cl[1] = [] then cl[1] := (); fi;
@@ -236,7 +237,7 @@ function( s1, s2 )
 	fi;
 	iso := CanonicalLabellingOfIncidenceStructure( s1 ) * 
 		CanonicalLabellingOfIncidenceStructure( s2 )^-1;
-	Info( InfoIncidenceStructures, 1, "<iso>: ", iso);
+	Info( InfoIncidenceStructures, 2, "<iso>: ", iso );
 	ret := true;
 	i :=1; j:=1;
 	if not OnSets([1..nrp],iso) = [1..nrp] then

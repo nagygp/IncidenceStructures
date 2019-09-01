@@ -21,6 +21,7 @@ SetInfoLevel(InfoIncidenceStructures,1);
 CanonicalLabellingOfIncidenceStructure(s);
 StructureDescription(AutomorphismGroup(s));
 
+SetInfoLevel(InfoIncidenceStructures,2);
 t:=IncidenceStructureByBlocks( "rozi", 
     ["or","iz","rz","oi","ir","oz"] );
 Isomorphism(s,t);
