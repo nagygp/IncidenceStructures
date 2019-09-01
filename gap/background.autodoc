@@ -3,6 +3,19 @@
 @Chapter Abstract incidence structures
 @Section Mathematical background
 
-TODO 1.
+We follow the notation and the terminology of the monograph <Cite Key="DesTheory1" />.
+
+An **incidence structure** is a triple $(V,\mathbf{B},I)$ where $V$ and $\mathbf{B}$ are any two disjoint sets and $I$ is a binary relation between $V$ and $\mathbf{B}$, i.e. $I\subseteq V\times \mathbf{B}$. The elements of $V$ will be called **points**, those of $\mathbf{B}$ **blocks** and those of $I$ **flags.** Instead of $(p, B) \in I$, we will simply write $p I B$ and use such geometric language as "the point $p$ lies on the block $B$", "$B$ passes through $p$", "$p$ and $B$ are incident", etc.
+
+The **trace** of a block $B$ is the set $\{ x \in V : x I B\}$ of the points incident with $B$. The **trace** of a point $p$ is the set $\{ B \in \mathbf{B} : p I B\}$ of the blocks incident with $p$. An incidence structure is called **simple** if the traces of distinct blocks are distinct. For any simple incidence structure, we can (and usually will) identify each block $B$ with its trace and the incidence relation $I$ with the membership relation $\in$.
+
+Let $(V,\mathbf{B},I)$ and label the points as $p_1,\ldots,p_v$ and the blocks $B_1,\ldots,B_b$. Then the $b\times v$ matrix $M=(m_{ij})$ defined by $m_{ij}=1$ if $p_j I B_i$, $m_{ij}=0$ otherwise, is called the **incidence matrix** of the structure. The row of $M$ belonging to a block $B$ is the **incidence vector** of $B$. 
+
+Let $(V,\mathbf{B},I)$ and $(V',\mathbf{B}',I')$ be incidence structures and let $\pi:V\cup \mathbf{B} \to V'\cup \mathbf{B}'$ be a bijection. $\pi$ is called an **isomorphism** if and only if it satisfies:
+
+- $V^\pi =V'$ and $\mathbf{B}^\pi =\mathbf{B}'$;
+- $p I B \Leftrightarrow p^\pi I' B^\pi$ for all $p\in V$ and $B\in \mathbf{B}$. 
+
+In this case, the two incidence structures are said to be **isomorphic**. If $(V,\mathbf{B},I)=(V',\mathbf{B}',I')$, then $\pi$ is called an **automorphism**. 
 
 @EndAutoDocPlainText

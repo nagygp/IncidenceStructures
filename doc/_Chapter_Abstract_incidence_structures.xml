@@ -8,7 +8,26 @@
 <Heading>Mathematical background</Heading>
 
 <P/>
-TODO 1.
+We follow the notation and the terminology of the monograph <Cite Key="DesTheory1" />.
+<P/>
+An <Emph>incidence structure</Emph> is a triple <Math>(V,\mathbf{B},I)</Math> where <Math>V</Math> and <Math>\mathbf{B}</Math> are any two disjoint sets and <Math>I</Math> is a binary relation between <Math>V</Math> and <Math>\mathbf{B}</Math>, i.e. <Math>I\subseteq V\times \mathbf{B}</Math>. The elements of <Math>V</Math> will be called <Emph>points</Emph>, those of <Math>\mathbf{B}</Math> <Emph>blocks</Emph> and those of <Math>I</Math> <Emph>flags.</Emph> Instead of <Math>(p, B) \in I</Math>, we will simply write <Math>p I B</Math> and use such geometric language as "the point <Math>p</Math> lies on the block <Math>B</Math>", "<Math>B</Math> passes through <Math>p</Math>", "<Math>p</Math> and <Math>B</Math> are incident", etc.
+<P/>
+The <Emph>trace</Emph> of a block <Math>B</Math> is the set <Math>\{ x \in V : x I B\}</Math> of the points incident with <Math>B</Math>. The <Emph>trace</Emph> of a point <Math>p</Math> is the set <Math>\{ B \in \mathbf{B} : p I B\}</Math> of the blocks incident with <Math>p</Math>. An incidence structure is called <Emph>simple</Emph> if the traces of distinct blocks are distinct. For any simple incidence structure, we can (and usually will) identify each block <Math>B</Math> with its trace and the incidence relation <Math>I</Math> with the membership relation <Math>\in</Math>.
+<P/>
+Let <Math>(V,\mathbf{B},I)</Math> and label the points as <Math>p_1,\ldots,p_v</Math> and the blocks <Math>B_1,\ldots,B_b</Math>. Then the <Math>b\times v</Math> matrix <Math>M=(m_{ij})</Math> defined by <Math>m_{ij}=1</Math> if <Math>p_j I B_i</Math>, <Math>m_{ij}=0</Math> otherwise, is called the <Emph>incidence matrix</Emph> of the structure. The row of <Math>M</Math> belonging to a block <Math>B</Math> is the <Emph>incidence vector</Emph> of <Math>B</Math>.
+<P/>
+Let <Math>(V,\mathbf{B},I)</Math> and <Math>(V',\mathbf{B}',I')</Math> be incidence structures and let <Math>\pi:V\cup \mathbf{B} \to V'\cup \mathbf{B}'</Math> be a bijection. <Math>\pi</Math> is called an <Emph>isomorphism</Emph> if and only if it satisfies:
+<P/>
+<List>
+<Item>
+<Math>V^\pi =V'</Math> and <Math>\mathbf{B}^\pi =\mathbf{B}'</Math>;
+</Item>
+<Item>
+<Math>p I B \Leftrightarrow p^\pi I' B^\pi</Math> for all <Math>p\in V</Math> and <Math>B\in \mathbf{B}</Math>.
+</Item>
+</List>
+<P/>
+In this case, the two incidence structures are said to be <Emph>isomorphic</Emph>. If <Math>(V,\mathbf{B},I)=(V',\mathbf{B}',I')</Math>, then <Math>\pi</Math> is called an <Emph>automorphism</Emph>.
 <P/>
 </Section>
 
@@ -155,7 +174,8 @@ blocks of <Math>S_1</Math>, <Math>S_2</Math>, respectively.
 Canonocal labellings, automorphisms and isomorphisms of incidence structures are
 computed with the help of their <Emph>incidence graphs</Emph>, which is are bipartite graphs
 with upper vertices the points and lower vertices the blocks. The computation
-is done using the &GAP; package <Package>BlissInterface</Package>.
+is done using the &GAP; package <Package>BlissInterface</Package> <Cite
+Key="BlissInterface0.2" />.
  </Description>
 </ManSection>
 

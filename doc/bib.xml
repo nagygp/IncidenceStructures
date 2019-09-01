@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE file SYSTEM "bibxmlext.dtd">
+<file>
+
+<entry id="DesTheory1"><book>
+  <author>
+    <name><first>Thomas</first><last>Beth</last></name>
+    <name><first>Dieter</first><last>Jungnickel</last></name>
+    <name><first>Hanfried</first><last>Lenz</last></name>
+  </author>  
+  <title>Design theory. <C>V</C>ol. <C>I</C></title>
+  <publisher>Cambridge University Press, Cambridge</publisher>
+  <year>1999</year>
+  <volume>69</volume>
+  <series>Encyclopedia of Mathematics and its Applications</series>
+  <edition>Second</edition>
+  <isbn>0-521-44432-2</isbn>
+  <mrnumber>1729456</mrnumber>
+  <mrclass>05B05 (20C30 51E05)</mrclass>
+  <url>https://doi.org/10.1017/CBO9780511549533</url>
+  <other type="doi">10.1017/CBO9780511549533</other>
+  <other type="pages">xx+1100</other>
+</book></entry>
+
+<entry id="BlissInterface0.2"><manual>
+  <author>
+    <name><first>G. P.</first><last>Nagy</last></name>
+  </author>  
+  <title><C>BlissInterface</C>, Low level interface to the bliss graph
+      automorphism tool, <C>V</C>ersion 0.2</title>
+  <organization>Budapest University of Technology</organization>
+  <year>2019</year>
+  <note>GAP package, <URL>https://nagygp.github.io/BlissInterface/</URL></note>
+  <url>https://nagygp.github.io/BlissInterface/</url>
+  <other type="month">Aug</other>
+  <other type="printedkey">Nag19</other>
+</manual></entry>
+
+
+</file>
+

@@ -125,7 +125,8 @@ DeclareAttribute( "AutomorphismGroup", IsIncidenceStructure );
 #!   Canonocal labellings, automorphisms and isomorphisms of incidence structures are  
 #!   computed with the help of their **incidence graphs**, which is are bipartite graphs
 #!   with upper vertices the points and lower vertices the blocks. The computation
-#!   is done using the &GAP; package <Package>BlissInterface</Package>.
+#!   is done using the &GAP; package <Package>BlissInterface</Package> <Cite 
+#!   Key="BlissInterface0.2" />.
 DeclareOperation( "Isomorphism", [ IsIncidenceStructure, IsIncidenceStructure ] );
 
 #####################################################
