@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>GAP (IncidenceStructures) - Chapter 1: Abstract incidence structures</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chap1"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap0.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chapBib.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p id="mathjaxlink" class="pcenter"><a href="chap1_mj.html">[MathJax on]</a></p>
+<p><a id="X87EE31CD80D9A241" name="X87EE31CD80D9A241"></a></p>
+<div class="ChapSects"><a href="chap1.html#X87EE31CD80D9A241">1 <span class="Heading">Abstract incidence structures</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap1.html#X7EF1B6708069B0C7">1.1 <span class="Heading">Mathematical background</span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap1.html#X7C9ABB1D78C3C63E">1.2 <span class="Heading">Constructing abstract incidence structures</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap1.html#X83340A4786876139">1.2-1 IsIncidenceStructure</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap1.html#X79E6419E86EFB3A1">1.2-2 IncidenceStructureByIncidenceMatrix</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap1.html#X8438A1407EFFE000">1.2-3 IncidenceStructureByIncidenceMatrixNC</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap1.html#X80B8826C7F28E84F">1.2-4 IncidenceStructureByBlocks</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap1.html#X8309661A8198AB68">1.2-5 IsIndexBasedIncidenceStructure</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap1.html#X8717FA1383718313">1.2-6 IsSimpleIncidenceStructure</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap1.html#X85D46FD87A71319A">1.2-7 InfoIncidenceStructures</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap1.html#X86EC9B2D7F4F77EE">1.3 <span class="Heading">Methods for abstract incidence structures</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap1.html#X7D831D5986D61409">1.3-1 PointsOfIncidenceStructure</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap1.html#X7A4400077A1A2C62">1.3-2 BlocksOfIncidenceStructure</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap1.html#X7EA648417A5C0C0D">1.3-3 TraceOfPoint</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap1.html#X7E69CF7281AD5858">1.3-4 TraceOfBlock</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap1.html#X831F90AA7CDCD74B">1.3-5 AutomorphismGroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap1.html#X78CB346E8019BE4D">1.3-6 Isomorphism</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap1.html#X7A489A5D79DA9E5C">1.4 <span class="Heading">Examples</span></a>
+</span>
+</div>
+</div>
+
+<h3>1 <span class="Heading">Abstract incidence structures</span></h3>
+
+<p><a id="X7EF1B6708069B0C7" name="X7EF1B6708069B0C7"></a></p>
+
+<h4>1.1 <span class="Heading">Mathematical background</span></h4>
+
+<p>We follow the notation and the terminology of the monograph <a href="chapBib.html#biBDesTheory1">[BJL99]</a>.</p>
+
+<p>An <em>incidence structure</em> is a triple <span class="Math">(V,\mathbf{B},I)</span> where <span class="Math">V</span> and <span class="Math">\mathbf{B}</span> are any two disjoint sets and <span class="Math">I</span> is a binary relation between <span class="Math">V</span> and <span class="Math">\mathbf{B}</span>, i.e. <span class="Math">I\subseteq V\times \mathbf{B}</span>. The elements of <span class="Math">V</span> will be called <em>points</em>, those of <span class="Math">\mathbf{B}</span> <em>blocks</em> and those of <span class="Math">I</span> <em>flags.</em> Instead of <span class="Math">(p, B) \in I</span>, we will simply write <span class="Math">p I B</span> and use such geometric language as "the point <span class="Math">p</span> lies on the block <span class="Math">B</span>", "<span class="Math">B</span> passes through <span class="Math">p</span>", "<span class="Math">p</span> and <span class="Math">B</span> are incident", etc.</p>
+
+<p>The <em>trace</em> of a block <span class="Math">B</span> is the set <span class="Math">\{ x \in V : x I B\}</span> of the points incident with <span class="Math">B</span>. The <em>trace</em> of a point <span class="Math">p</span> is the set <span class="Math">\{ B \in \mathbf{B} : p I B\}</span> of the blocks incident with <span class="Math">p</span>. An incidence structure is called <em>simple</em> if the traces of distinct blocks are distinct. For any simple incidence structure, we can (and usually will) identify each block <span class="Math">B</span> with its trace and the incidence relation <span class="Math">I</span> with the membership relation <span class="Math">\in</span>.</p>
+
+<p>Let <span class="Math">(V,\mathbf{B},I)</span> and label the points as <span class="Math">p_1,\ldots,p_v</span> and the blocks <span class="Math">B_1,\ldots,B_b</span>. Then the <span class="Math">b\times v</span> matrix <span class="Math">M=(m_{ij})</span> defined by <span class="Math">m_{ij}=1</span> if <span class="Math">p_j I B_i</span>, <span class="Math">m_{ij}=0</span> otherwise, is called the <em>incidence matrix</em> of the structure. The row of <span class="Math">M</span> belonging to a block <span class="Math">B</span> is the <em>incidence vector</em> of <span class="Math">B</span>.</p>
+
+<p>Let <span class="Math">(V,\mathbf{B},I)</span> and <span class="Math">(V',\mathbf{B}',I')</span> be incidence structures and let <span class="Math">\pi:V\cup \mathbf{B} \to V'\cup \mathbf{B}'</span> be a bijection. <span class="Math">\pi</span> is called an <em>isomorphism</em> if and only if it satisfies:</p>
+
+
+<ul>
+<li><p><span class="Math">V^\pi =V'</span> and <span class="Math">\mathbf{B}^\pi =\mathbf{B}'</span>;</p>
+
+</li>
+<li><p><span class="Math">p I B \Leftrightarrow p^\pi I' B^\pi</span> for all <span class="Math">p\in V</span> and <span class="Math">B\in \mathbf{B}</span>.</p>
+
+</li>
+</ul>
+<p>In this case, the two incidence structures are said to be <em>isomorphic</em>. If <span class="Math">(V,\mathbf{B},I)=(V',\mathbf{B}',I')</span>, then <span class="Math">\pi</span> is called an <em>automorphism</em>.</p>
+
+<p><a id="X7C9ABB1D78C3C63E" name="X7C9ABB1D78C3C63E"></a></p>
+
+<h4>1.2 <span class="Heading">Constructing abstract incidence structures</span></h4>
+
+<p><a id="X83340A4786876139" name="X83340A4786876139"></a></p>
+
+<h5>1.2-1 IsIncidenceStructure</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsIncidenceStructure</code>( <var class="Arg">object</var> )</td><td class="tdright">(&nbsp;filter&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="code">true</code> or <code class="code">false</code></p>
+
+<p>A <strong class="pkg">GAP</strong> category of abstract incidence structures.</p>
+
+<p><a id="X79E6419E86EFB3A1" name="X79E6419E86EFB3A1"></a></p>
+
+<h5>1.2-2 IncidenceStructureByIncidenceMatrix</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IncidenceStructureByIncidenceMatrix</code>( <var class="Arg">pts</var>, <var class="Arg">bls</var>, <var class="Arg">incmat</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>Returns: The incidence structure object corresponding to the set <var class="Arg">pts</var> of points and the list <var class="Arg">bls</var> of blocks and the incidence matrix <var class="Arg">incmat</var>. <var class="Arg">incmat</var> must be a boolean matrix with <code class="code">|bls|</code> rows and <code class="code">|pts|</code> columns.</p>
+
+<p><a id="X8438A1407EFFE000" name="X8438A1407EFFE000"></a></p>
+
+<h5>1.2-3 IncidenceStructureByIncidenceMatrixNC</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IncidenceStructureByIncidenceMatrixNC</code>( <var class="Arg">pts</var>, <var class="Arg">bls</var>, <var class="Arg">incmat</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>The non-checking version of the command <code class="code">IncidenceStructureByIncidenceMatrix</code>.</p>
+
+<p><a id="X80B8826C7F28E84F" name="X80B8826C7F28E84F"></a></p>
+
+<h5>1.2-4 IncidenceStructureByBlocks</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IncidenceStructureByBlocks</code>( <var class="Arg">pts</var>, <var class="Arg">bls</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>Returns: The incidence structure object corresponding to the set <var class="Arg">pts</var> of points and the list <var class="Arg">bls</var> of blocks. The elements of <var class="Arg">bls</var> must be subsets of <var class="Arg">pts</var>.</p>
+
+<p><a id="X8309661A8198AB68" name="X8309661A8198AB68"></a></p>
+
+<h5>1.2-5 IsIndexBasedIncidenceStructure</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsIndexBasedIncidenceStructure</code>( <var class="Arg">s</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>We call the incident structre <var class="Arg">s</var> <em>index based</em> if its set of points is the integer range <code class="code">[1..n]</code> and blocks are subsets of <code class="code">[1..n]</code>.</p>
+
+<p><a id="X8717FA1383718313" name="X8717FA1383718313"></a></p>
+
+<h5>1.2-6 IsSimpleIncidenceStructure</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSimpleIncidenceStructure</code>( <var class="Arg">s</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="keyw">true</code> if <var class="Arg">s</var> is a simple incident structure.</p>
+
+<p>An incident structure is said to be <em>simple</em> if each block is uniquely determined by the set of points which are incident with it.</p>
+
+<p><a id="X85D46FD87A71319A" name="X85D46FD87A71319A"></a></p>
+
+<h5>1.2-7 InfoIncidenceStructures</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; InfoIncidenceStructures</code></td><td class="tdright">(&nbsp;info class&nbsp;)</td></tr></table></div>
+<p>An infoclass for the package. Its default value is <span class="Math">0</span>.</p>
+
+<p><a id="X86EC9B2D7F4F77EE" name="X86EC9B2D7F4F77EE"></a></p>
+
+<h4>1.3 <span class="Heading">Methods for abstract incidence structures</span></h4>
+
+<p><a id="X7D831D5986D61409" name="X7D831D5986D61409"></a></p>
+
+<h5>1.3-1 PointsOfIncidenceStructure</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PointsOfIncidenceStructure</code>( <var class="Arg">s</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: The list of points of the incidence structure <var class="Arg">s</var>.</p>
+
+<p><a id="X7A4400077A1A2C62" name="X7A4400077A1A2C62"></a></p>
+
+<h5>1.3-2 BlocksOfIncidenceStructure</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BlocksOfIncidenceStructure</code>( <var class="Arg">s</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: The list of blocks of the incidence structure <var class="Arg">s</var>.</p>
+
+<p><a id="X7EA648417A5C0C0D" name="X7EA648417A5C0C0D"></a></p>
+
+<h5>1.3-3 TraceOfPoint</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TraceOfPoint</code>( <var class="Arg">s</var>, <var class="Arg">pt</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: The list of blocks which are incident with <var class="Arg">pt</var> in the incidence structure <var class="Arg">s</var>.</p>
+
+<p><a id="X7E69CF7281AD5858" name="X7E69CF7281AD5858"></a></p>
+
+<h5>1.3-4 TraceOfBlock</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TraceOfBlock</code>( <var class="Arg">s</var>, <var class="Arg">bl</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: The list of points which are incident with <var class="Arg">bl</var> in the incidence structure <var class="Arg">s</var>.</p>
+
+<p><a id="X831F90AA7CDCD74B" name="X831F90AA7CDCD74B"></a></p>
+
+<h5>1.3-5 AutomorphismGroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AutomorphismGroup</code>( <var class="Arg">s</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: The automorphism group of the incidence structure <var class="Arg">s</var>.</p>
+
+<p>The function computes the automorphism group of <var class="Arg">s</var> with the help of its incidence digraph.</p>
+
+<p><a id="X78CB346E8019BE4D" name="X78CB346E8019BE4D"></a></p>
+
+<h5>1.3-6 Isomorphism</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Isomorphism</code>( <var class="Arg">s1</var>, <var class="Arg">s2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: An isomorphism between the incidence structures <var class="Arg">s1</var> and <var class="Arg">s1</var> if they are isomorphic, and <code class="keyw">fail</code> otherwise.</p>
+
+<p>The isomorphism is a bijection between the points sets and between the line sets of the incidence structures <span class="Math">S_1</span> and <span class="Math">S_2</span> such that the incidence relations are preserved. In this implementation, an isomorphism is given by a permutation <span class="Math">\beta</span> of degree <span class="Math">n+m</span>, where <span class="Math">n</span> is the number of points and <span class="Math">m</span> is the number of lines. The bijections defined by <span class="Math">\beta</span> are <span class="Math">p[i]\mapsto p'[i^\beta]</span> and <span class="Math">b[j] \mapsto b'[(j+n)^\beta-n]</span>, where <span class="Math">p[i]</span>, <span class="Math">p'[i']</span> are points and <span class="Math">b[j]</span>, <span class="Math">b'[j']</span> are blocks of <span class="Math">S_1</span>, <span class="Math">S_2</span>, respectively.</p>
+
+<p>Canonocal labellings, automorphisms and isomorphisms of incidence structures are computed with the help of their <em>incidence graphs</em>, which is are bipartite graphs with upper vertices the points and lower vertices the blocks. The computation is done using the <strong class="pkg">GAP</strong> package <strong class="pkg">BlissInterface</strong> <a href="chapBib.html#biBBlissInterface0.2">[Nag19]</a>.</p>
+
+<p><a id="X7A489A5D79DA9E5C" name="X7A489A5D79DA9E5C"></a></p>
+
+<h4>1.4 <span class="Heading">Examples</span></h4>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">LoadPackage("IncidenceStructures",false);       </span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=IncidenceStructureByBlocks([1..3],[[1],[1,2],[1,2,3]]);</span>
+&lt;Incidence structure on 3 points&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PointsOfIncidenceStructure(s);</span>
+[ 1, 2, 3 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BlocksOfIncidenceStructure(s);</span>
+[ [ 1 ], [ 1, 2 ], [ 1, 2, 3 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">CanonicalLabellingOfIncidenceStructure(s);</span>
+(1,3)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">KnownAttributesOfObject(s);</span>
+[ "AutomorphismGroup", "IsIndexBasedIncidenceStructure", 
+  "PointsOfIncidenceStructure", "BlocksOfIncidenceStructure", 
+  "CanonicalLabellingOfIncidenceStructure" ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=IncidenceStructureByIncidenceMatrix( [1..4], "abcdef", </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">     [[true,true,false,false],</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">     [true,false,true,false],</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">     [true,false,false,true],</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">     [false,true,true,false],</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">     [false,true,false,true],</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">     [false,false,true,true]]</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">);</span>
+&lt;Incidence structure on 4 points&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TraceOfPoint(s,2);</span>
+"ade"
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TraceOfBlock(s,'c');</span>
+[ 1, 4 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetInfoLevel(InfoIncidenceStructures,1);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">CanonicalLabellingOfIncidenceStructure(s);</span>
+#I  BLISS_BIPARTITE_CANONICAL_LABELING called
+(1,4)(2,3)(5,10,9)(6,8)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">StructureDescription(AutomorphismGroup(s));</span>
+"S4"
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetInfoLevel(InfoIncidenceStructures,2);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">t:=IncidenceStructureByBlocks( "rozi", </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">     ["or","iz","rz","oi","ir","oz"] );                                               </span>
+&lt;Incidence structure on 4 points&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Isomorphism(s,t);</span>
+#I  BLISS_BIPARTITE_CANONICAL_LABELING called
+#I  &lt;outneigh&gt; parameter for BLISS command: [ [ 2, 3 ], [ 1, 4 ], [ 3, 4 ], [ 1, 2 ], [ 1, 3 ], [ 2, 4 ] ]
+#I  &lt;iso&gt;: ( 1, 3, 4)( 6, 7, 9, 8,10)
+(1,3,4)(6,7,9,8,10)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">StructureDescription(AutomorphismGroup(t));</span>
+"S4"
+</pre></div>
+
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap0.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chapBib.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>

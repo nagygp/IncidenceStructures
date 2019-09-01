@@ -1,0 +1,193 @@
+  
+  [1X1 [33X[0;0YAbstract incidence structures[133X[101X
+  
+  
+  [1X1.1 [33X[0;0YMathematical background[133X[101X
+  
+  [33X[0;0YWe follow the notation and the terminology of the monograph [BJL99].[133X
+  
+  [33X[0;0YAn  [13Xincidence  structure[113X is a triple [23X(V,\mathbf{B},I)[123X where [23XV[123X and [23X\mathbf{B}[123X
+  are  any  two  disjoint  sets  and  [23XI[123X  is  a  binary  relation between [23XV[123X and
+  [23X\mathbf{B}[123X,  i.e.  [23XI\subseteq  V\times \mathbf{B}[123X. The elements of [23XV[123X will be
+  called  [13Xpoints[113X,  those of [23X\mathbf{B}[123X [13Xblocks[113X and those of [23XI[123X [13Xflags.[113X Instead of
+  [23X(p,  B) \in I[123X, we will simply write [23Xp I B[123X and use such geometric language as
+  "the  point  [23Xp[123X  lies  on  the  block  [23XB[123X", "[23XB[123X passes through [23Xp[123X", "[23Xp[123X and [23XB[123X are
+  incident", etc.[133X
+  
+  [33X[0;0YThe  [13Xtrace[113X  of  a  block  [23XB[123X  is  the  set [23X\{ x \in V : x I B\}[123X of the points
+  incident with [23XB[123X. The [13Xtrace[113X of a point [23Xp[123X is the set [23X\{ B \in \mathbf{B} : p I
+  B\}[123X  of  the blocks incident with [23Xp[123X. An incidence structure is called [13Xsimple[113X
+  if  the  traces  of  distinct  blocks are distinct. For any simple incidence
+  structure,  we  can  (and usually will) identify each block [23XB[123X with its trace
+  and the incidence relation [23XI[123X with the membership relation [23X\in[123X.[133X
+  
+  [33X[0;0YLet  [23X(V,\mathbf{B},I)[123X  and label the points as [23Xp_1,\ldots,p_v[123X and the blocks
+  [23XB_1,\ldots,B_b[123X.  Then the [23Xb\times v[123X matrix [23XM=(m_{ij})[123X defined by [23Xm_{ij}=1[123X if
+  [23Xp_j  I  B_i[123X,  [23Xm_{ij}=0[123X  otherwise,  is  called  the  [13Xincidence matrix[113X of the
+  structure. The row of [23XM[123X belonging to a block [23XB[123X is the [13Xincidence vector[113X of [23XB[123X.[133X
+  
+  [33X[0;0YLet [23X(V,\mathbf{B},I)[123X and [23X(V',\mathbf{B}',I')[123X be incidence structures and let
+  [23X\pi:V\cup \mathbf{B} \to V'\cup \mathbf{B}'[123X be a bijection. [23X\pi[123X is called an
+  [13Xisomorphism[113X if and only if it satisfies:[133X
+  
+  [30X    [33X[0;6Y[23XV^\pi =V'[123X and [23X\mathbf{B}^\pi =\mathbf{B}'[123X;[133X
+  
+  [30X    [33X[0;6Y[23Xp  I  B  \Leftrightarrow  p^\pi  I'  B^\pi[123X  for  all  [23Xp\in  V[123X and [23XB\in
+        \mathbf{B}[123X.[133X
+  
+  [33X[0;0YIn  this  case,  the  two incidence structures are said to be [13Xisomorphic[113X. If
+  [23X(V,\mathbf{B},I)=(V',\mathbf{B}',I')[123X, then [23X\pi[123X is called an [13Xautomorphism[113X.[133X
+  
+  
+  [1X1.2 [33X[0;0YConstructing abstract incidence structures[133X[101X
+  
+  [1X1.2-1 IsIncidenceStructure[101X
+  
+  [33X[1;0Y[29X[2XIsIncidenceStructure[102X( [3Xobject[103X ) [32X filter[133X
+  [6XReturns:[106X  [33X[0;10Y[10Xtrue[110X or [10Xfalse[110X[133X
+  
+  [33X[0;0YA [5XGAP[105X category of abstract incidence structures.[133X
+  
+  [1X1.2-2 IncidenceStructureByIncidenceMatrix[101X
+  
+  [33X[1;0Y[29X[2XIncidenceStructureByIncidenceMatrix[102X( [3Xpts[103X, [3Xbls[103X, [3Xincmat[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10YThe  incidence  structure  object  corresponding to the set [3Xpts[103X of
+            points and the list [3Xbls[103X of blocks and the incidence matrix [3Xincmat[103X.
+            [3Xincmat[103X must be a boolean matrix with [10X|bls|[110X rows and [10X|pts|[110X columns.[133X
+  
+  [1X1.2-3 IncidenceStructureByIncidenceMatrixNC[101X
+  
+  [33X[1;0Y[29X[2XIncidenceStructureByIncidenceMatrixNC[102X( [3Xpts[103X, [3Xbls[103X, [3Xincmat[103X ) [32X function[133X
+  
+  [33X[0;0YThe non-checking version of the command [10XIncidenceStructureByIncidenceMatrix[110X.[133X
+  
+  [1X1.2-4 IncidenceStructureByBlocks[101X
+  
+  [33X[1;0Y[29X[2XIncidenceStructureByBlocks[102X( [3Xpts[103X, [3Xbls[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10YThe  incidence  structure  object  corresponding to the set [3Xpts[103X of
+            points  and  the  list  [3Xbls[103X of blocks. The elements of [3Xbls[103X must be
+            subsets of [3Xpts[103X.[133X
+  
+  [1X1.2-5 IsIndexBasedIncidenceStructure[101X
+  
+  [33X[1;0Y[29X[2XIsIndexBasedIncidenceStructure[102X( [3Xs[103X ) [32X attribute[133X
+  
+  [33X[0;0YWe  call  the  incident  structre  [3Xs[103X [13Xindex based[113X if its set of points is the
+  integer range [10X[1..n][110X and blocks are subsets of [10X[1..n][110X.[133X
+  
+  [1X1.2-6 IsSimpleIncidenceStructure[101X
+  
+  [33X[1;0Y[29X[2XIsSimpleIncidenceStructure[102X( [3Xs[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X if [3Xs[103X is a simple incident structure.[133X
+  
+  [33X[0;0YAn  incident  structure  is  said  to  be  [13Xsimple[113X  if each block is uniquely
+  determined by the set of points which are incident with it.[133X
+  
+  [1X1.2-7 InfoIncidenceStructures[101X
+  
+  [33X[1;0Y[29X[2XInfoIncidenceStructures[102X[32X info class[133X
+  
+  [33X[0;0YAn infoclass for the package. Its default value is [23X0[123X.[133X
+  
+  
+  [1X1.3 [33X[0;0YMethods for abstract incidence structures[133X[101X
+  
+  [1X1.3-1 PointsOfIncidenceStructure[101X
+  
+  [33X[1;0Y[29X[2XPointsOfIncidenceStructure[102X( [3Xs[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10YThe list of points of the incidence structure [3Xs[103X.[133X
+  
+  [1X1.3-2 BlocksOfIncidenceStructure[101X
+  
+  [33X[1;0Y[29X[2XBlocksOfIncidenceStructure[102X( [3Xs[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10YThe list of blocks of the incidence structure [3Xs[103X.[133X
+  
+  [1X1.3-3 TraceOfPoint[101X
+  
+  [33X[1;0Y[29X[2XTraceOfPoint[102X( [3Xs[103X, [3Xpt[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10YThe  list  of  blocks  which are incident with [3Xpt[103X in the incidence
+            structure [3Xs[103X.[133X
+  
+  [1X1.3-4 TraceOfBlock[101X
+  
+  [33X[1;0Y[29X[2XTraceOfBlock[102X( [3Xs[103X, [3Xbl[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10YThe  list  of  points  which are incident with [3Xbl[103X in the incidence
+            structure [3Xs[103X.[133X
+  
+  [1X1.3-5 AutomorphismGroup[101X
+  
+  [33X[1;0Y[29X[2XAutomorphismGroup[102X( [3Xs[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10YThe automorphism group of the incidence structure [3Xs[103X.[133X
+  
+  [33X[0;0YThe  function  computes  the  automorphism  group  of [3Xs[103X with the help of its
+  incidence digraph.[133X
+  
+  [1X1.3-6 Isomorphism[101X
+  
+  [33X[1;0Y[29X[2XIsomorphism[102X( [3Xs1[103X, [3Xs2[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10YAn  isomorphism between the incidence structures [3Xs1[103X and [3Xs1[103X if they
+            are isomorphic, and [9Xfail[109X otherwise.[133X
+  
+  [33X[0;0YThe  isomorphism is a bijection between the points sets and between the line
+  sets  of  the  incidence  structures  [23XS_1[123X  and  [23XS_2[123X  such that the incidence
+  relations  are preserved. In this implementation, an isomorphism is given by
+  a  permutation [23X\beta[123X of degree [23Xn+m[123X, where [23Xn[123X is the number of points and [23Xm[123X is
+  the  number  of  lines.  The  bijections  defined  by  [23X\beta[123X are [23Xp[i]\mapsto
+  p'[i^\beta][123X  and  [23Xb[j]  \mapsto  b'[(j+n)^\beta-n][123X,  where  [23Xp[i][123X, [23Xp'[i'][123X are
+  points and [23Xb[j][123X, [23Xb'[j'][123X are blocks of [23XS_1[123X, [23XS_2[123X, respectively.[133X
+  
+  [33X[0;0YCanonocal labellings, automorphisms and isomorphisms of incidence structures
+  are computed with the help of their [13Xincidence graphs[113X, which is are bipartite
+  graphs  with  upper  vertices  the points and lower vertices the blocks. The
+  computation is done using the [5XGAP[105X package [5XBlissInterface[105X [Nag19].[133X
+  
+  
+  [1X1.4 [33X[0;0YExamples[133X[101X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XLoadPackage("IncidenceStructures",false);       [127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27Xs:=IncidenceStructureByBlocks([1..3],[[1],[1,2],[1,2,3]]);[127X[104X
+    [4X[28X<Incidence structure on 3 points>[128X[104X
+    [4X[25Xgap>[125X [27XPointsOfIncidenceStructure(s);[127X[104X
+    [4X[28X[ 1, 2, 3 ][128X[104X
+    [4X[25Xgap>[125X [27XBlocksOfIncidenceStructure(s);[127X[104X
+    [4X[28X[ [ 1 ], [ 1, 2 ], [ 1, 2, 3 ] ][128X[104X
+    [4X[25Xgap>[125X [27XCanonicalLabellingOfIncidenceStructure(s);[127X[104X
+    [4X[28X(1,3)[128X[104X
+    [4X[25Xgap>[125X [27XKnownAttributesOfObject(s);[127X[104X
+    [4X[28X[ "AutomorphismGroup", "IsIndexBasedIncidenceStructure", [128X[104X
+    [4X[28X  "PointsOfIncidenceStructure", "BlocksOfIncidenceStructure", [128X[104X
+    [4X[28X  "CanonicalLabellingOfIncidenceStructure" ][128X[104X
+    [4X[25Xgap>[125X [27Xs:=IncidenceStructureByIncidenceMatrix( [1..4], "abcdef", [127X[104X
+    [4X[25X>[125X [27X     [[true,true,false,false],[127X[104X
+    [4X[25X>[125X [27X     [true,false,true,false],[127X[104X
+    [4X[25X>[125X [27X     [true,false,false,true],[127X[104X
+    [4X[25X>[125X [27X     [false,true,true,false],[127X[104X
+    [4X[25X>[125X [27X     [false,true,false,true],[127X[104X
+    [4X[25X>[125X [27X     [false,false,true,true]][127X[104X
+    [4X[25X>[125X [27X);[127X[104X
+    [4X[28X<Incidence structure on 4 points>[128X[104X
+    [4X[25Xgap>[125X [27XTraceOfPoint(s,2);[127X[104X
+    [4X[28X"ade"[128X[104X
+    [4X[25Xgap>[125X [27XTraceOfBlock(s,'c');[127X[104X
+    [4X[28X[ 1, 4 ][128X[104X
+    [4X[25Xgap>[125X [27XSetInfoLevel(InfoIncidenceStructures,1);[127X[104X
+    [4X[25Xgap>[125X [27XCanonicalLabellingOfIncidenceStructure(s);[127X[104X
+    [4X[28X#I  BLISS_BIPARTITE_CANONICAL_LABELING called[128X[104X
+    [4X[28X(1,4)(2,3)(5,10,9)(6,8)[128X[104X
+    [4X[25Xgap>[125X [27XStructureDescription(AutomorphismGroup(s));[127X[104X
+    [4X[28X"S4"[128X[104X
+    [4X[25Xgap>[125X [27XSetInfoLevel(InfoIncidenceStructures,2);[127X[104X
+    [4X[25Xgap>[125X [27Xt:=IncidenceStructureByBlocks( "rozi", [127X[104X
+    [4X[25X>[125X [27X     ["or","iz","rz","oi","ir","oz"] );                                               [127X[104X
+    [4X[28X<Incidence structure on 4 points>[128X[104X
+    [4X[25Xgap>[125X [27XIsomorphism(s,t);[127X[104X
+    [4X[28X#I  BLISS_BIPARTITE_CANONICAL_LABELING called[128X[104X
+    [4X[28X#I  <outneigh> parameter for BLISS command: [ [ 2, 3 ], [ 1, 4 ], [ 3, 4 ], [ 1, 2 ], [ 1, 3 ], [ 2, 4 ] ][128X[104X
+    [4X[28X#I  <iso>: ( 1, 3, 4)( 6, 7, 9, 8,10)[128X[104X
+    [4X[28X(1,3,4)(6,7,9,8,10)[128X[104X
+    [4X[25Xgap>[125X [27XStructureDescription(AutomorphismGroup(t));[127X[104X
+    [4X[28X"S4"[128X[104X
+  [4X[32X[104X
+  

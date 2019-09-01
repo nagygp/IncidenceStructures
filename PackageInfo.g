@@ -68,7 +68,7 @@ PackageDoc := rec(
 
 Dependencies := rec(
   GAP := ">= 4.9",
-  NeededOtherPackages := [ ],
+  NeededOtherPackages := [ ["BlissInterface", ">=0.2" ] ],
   SuggestedOtherPackages := [ ],
   ExternalConditions := [ ],
 ),

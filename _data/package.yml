@@ -14,6 +14,11 @@ maintainers:
 
 GAP: ">= 4.9"
 
+needed-pkgs:
+    - name: "BlissInterface"
+      version: ">=0.2"
+      url: "https://nagygp.github.io/BlissInterface/"
+
 www: https://nagygp.github.io/IncidenceStructures/
 readme: README.md
 packageinfo: https://nagygp.github.io/IncidenceStructures/PackageInfo.g
@@ -41,11 +46,13 @@ citeas: |
 bibtex: |
     @misc{ IncidenceStructures0.1,
       author =           {Nagy, G. P.},
-      title =            {{IncidenceStructures}, GAP implementation of abstract point-line incidence structures, {V}ersion 0.1},
+      title =            {{IncidenceStructures},  GAP implementation of abstract
+                          point-line incidence structures, {V}ersion 0.1},
       month =            {Aug},
       year =             {2019},
       note =             {GAP package},
-      howpublished =     {\href   {https://nagygp.github.io/IncidenceStructures/}  {\texttt{https://nagygp.github.io/}\discretionary
+      howpublished =     {\href  {https://nagygp.github.io/IncidenceStructures/}
+                          {\texttt{https://nagygp.github.io/}\discretionary
                           {}{}{}\texttt{IncidenceStructures/}}},
       printedkey =       {Nag19}
     }

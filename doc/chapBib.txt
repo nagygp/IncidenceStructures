@@ -1,0 +1,15 @@
+  
+  
+  [1XReferences[101X
+  
+  [[20XBJL99[120X]  [16XBeth,  T.,  Jungnickel,  D.  and  Lenz,  H.[116X, [17XDesign theory. Vol. I[117X,
+  Cambridge  University  Press,  Cambridge,  Second  edition,  Encyclopedia of
+  Mathematics and its Applications, [19X69[119X (1999), xx+1100 pages.
+  
+  [[20XNag19[120X]  [16XNagy, G. P.[116X, [17XBlissInterface, Low level interface to the bliss graph
+  automorphism  tool,  Version  0.2[117X, Budapest University of Technology (2019),
+  ((GAP package, https://nagygp.github.io/BlissInterface/)).
+  
+  
+  
+  [32X
