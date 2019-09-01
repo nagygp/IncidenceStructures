@@ -1,5 +1,5 @@
 #
-# IncidenceStructures: GAP implementation of abstract point-line incidence structures
+# IncidenceStructures: GAP implementation of abstract incidence structures
 #
 # This file contains package meta data. For additional information on
 # the meaning and correct usage of these fields, please consult the
@@ -9,9 +9,9 @@
 SetPackageInfo( rec(
 
 PackageName := "IncidenceStructures",
-Subtitle := "GAP implementation of abstract point-line incidence structures",
-Version := "0.1",
-Date := "27/08/2019", # dd/mm/yyyy format
+Subtitle := "GAP implementation of abstract incidence structures",
+Version := "0.2",
+Date := "01/09/2019", # dd/mm/yyyy format
 License := "GPL-2.0-or-later",
 
 Persons := [
@@ -63,7 +63,7 @@ PackageDoc := rec(
   HTMLStart := "doc/chap0.html",
   PDFFile   := "doc/manual.pdf",
   SixFile   := "doc/manual.six",
-  LongTitle := "GAP implementation of abstract point-line incidence structures",
+  LongTitle := "GAP implementation of abstract incidence structures",
 ),
 
 Dependencies := rec(
@@ -77,7 +77,7 @@ AvailabilityTest := ReturnTrue,
 
 TestFile := "tst/testall.g",
 
-#Keywords := [ "TODO" ],
+Keywords := [ "incidence", "incidence structure", "design", "Steiner system", "finite geometry" ],
 
 ));
 

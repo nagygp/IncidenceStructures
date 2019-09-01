@@ -3,13 +3,13 @@
                              [1X IncidenceStructures [101X
   
   
-        [1X [5XGAP[105X implementation of abstract point-line incidence structures [101X
+             [1X [5XGAP[105X implementation of abstract incidence structures [101X
   
   
-                                      0.1
+                                      0.2
   
   
-                                 27 August 2019
+                                1 September 2019
   
   
                                  Gábor P. Nagy

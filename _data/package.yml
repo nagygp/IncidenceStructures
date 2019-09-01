@@ -1,8 +1,8 @@
 name: IncidenceStructures
-version: "0.1"
-date: 2019-08-27
+version: "0.2"
+date: 2019-09-01
 description: |
-    GAP implementation of abstract point-line incidence structures
+    GAP implementation of abstract incidence structures
 
 authors:
     - name: Gábor P. Nagy
@@ -25,18 +25,20 @@ packageinfo: https://nagygp.github.io/IncidenceStructures/PackageInfo.g
 
 downloads:
     - name: .tar.gz
-      url: https://github.com/nagygp/IncidenceStructures/releases/download/v0.1/IncidenceStructures-0.1.tar.gz
+      url: https://github.com/nagygp/IncidenceStructures/releases/download/v0.2/IncidenceStructures-0.2.tar.gz
 
 abstract: |
 
 status: dev
 doc-html: doc/chap0.html
 doc-pdf: doc/manual.pdf
+keywords: |
+    incidence, incidence structure, design, Steiner system, finite geometry.
 citeas: |
     <p class='BibEntry'>
     [<span class='BibKey'>Nag19</span>]   <b class='BibAuthor'>Nagy, G. P.</b>,
-     <i class='BibTitle'>IncidenceStructures, GAP implementation of abstract point-line incidence structures,
-             Version 0.1</i>
+     <i class='BibTitle'>IncidenceStructures, GAP implementation of abstract incidence structures,
+             Version 0.2</i>
      (<span class='BibYear'>2019</span>)<br />
     (<span class='BibNote'>GAP package</span>),
     <span class='BibHowpublished'><a href="https://nagygp.github.io/IncidenceStructures/">https://nagygp.github.io/IncidenceStructures/</a></span>.
@@ -44,16 +46,18 @@ citeas: |
     
 
 bibtex: |
-    @misc{ IncidenceStructures0.1,
+    @misc{ IncidenceStructures0.2,
       author =           {Nagy, G. P.},
       title =            {{IncidenceStructures},  GAP implementation of abstract
-                          point-line incidence structures, {V}ersion 0.1},
-      month =            {Aug},
+                          incidence structures, {V}ersion 0.2},
+      month =            {Sep},
       year =             {2019},
       note =             {GAP package},
       howpublished =     {\href  {https://nagygp.github.io/IncidenceStructures/}
                           {\texttt{https://nagygp.github.io/}\discretionary
                           {}{}{}\texttt{IncidenceStructures/}}},
+      keywords =         {incidence;   incidence   structure;   design;  Steiner
+                          system; finite geometry},
       printedkey =       {Nag19}
     }
 
