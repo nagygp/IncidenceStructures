@@ -1,5 +1,5 @@
 #
-# IncidenceStructures: GAP implementation of abstract point-line incidence structures
+# IncidenceStructures: GAP implementation of abstract incidence structures
 #
 # This file is a script which compiles the package manual.
 #

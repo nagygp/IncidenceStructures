@@ -6,10 +6,10 @@
     IncidenceStructures
   </Title>
   <Subtitle>
-    &GAP; implementation of abstract point-line incidence structures
+    &GAP; implementation of abstract incidence structures
   </Subtitle>
   <Version>
-    0.1
+    0.2
   </Version>
   <Author>
     Gábor P. Nagy<Alt Only="LaTeX"><Br/></Alt>
@@ -23,6 +23,6 @@ H-1111 Budapest (Hungary)<Br/>
 
   </Author>
   <Date>
-    27 August 2019
+    1 September 2019
   </Date>
   </TitlePage>

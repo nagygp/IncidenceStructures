@@ -1,5 +1,5 @@
 #
-# IncidenceStructures: GAP implementation of abstract point-line incidence structures
+# IncidenceStructures: GAP implementation of abstract incidence structures
 #
 # This file runs package tests. It is also referenced in the package
 # metadata in PackageInfo.g.
