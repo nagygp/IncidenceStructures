@@ -11,7 +11,7 @@ SetPackageInfo( rec(
 PackageName := "IncidenceStructures",
 Subtitle := "GAP implementation of abstract incidence structures",
 Version := "0.3",
-Date := "01/11/2020", # dd/mm/yyyy format
+Date := "05/11/2020", # dd/mm/yyyy format
 License := "GPL-2.0-or-later",
 
 Persons := [
