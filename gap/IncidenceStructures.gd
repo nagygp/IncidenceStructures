@@ -109,6 +109,15 @@ DeclareAttribute( "BlockColoringOfIncidenceStructure", IsIncidenceStructure );
 DeclareAttribute( "AutomorphismGroup", IsIncidenceStructure );
 
 #! @ChapterInfo Abstract incidence structures, Methods for abstract incidence structures
+#! @Arguments s
+#! @Returns
+#!   The hash value of the incidence structure <A>s</A>.
+#! @Description
+#!   The function computes the value of <A>s</A> with the help of canonical labeling of 
+#!   its incidence digraph. 
+DeclareAttribute( "HashValue", IsIncidenceStructure );
+
+#! @ChapterInfo Abstract incidence structures, Methods for abstract incidence structures
 #! @Arguments s1, s2
 #! @Returns
 #!   An isomorphism between the incidence structures <A>s1</A> and <A>s1</A> if they are

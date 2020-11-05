@@ -155,6 +155,7 @@ function( s )
 #	cl := BlissBipartiteCanonicalLabeling( nrp, nrb, outneigh, ucolours, lcolours );
 	if cl[1] = [] then cl[1] := (); fi;
     SetAutomorphismGroup( s, Group( cl[1] ) );
+	SetHashValue( s, cl[3] );
     return cl[2];
 end );
 
@@ -163,6 +164,13 @@ InstallMethod( AutomorphismGroup, "for an abstract incidence structure",
 function( s )
     CanonicalLabellingOfIncidenceStructure( s );
     return AutomorphismGroup( s );
+end );
+
+InstallMethod( HashValue, "for an abstract incidence structure",
+    [ IsIncidenceStructure ],
+function( s )
+    CanonicalLabellingOfIncidenceStructure( s );
+    return HashValue( s );
 end );
 
 InstallMethod( Isomorphism, "for two abstract incidence structures",

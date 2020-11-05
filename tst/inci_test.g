@@ -1,3 +1,5 @@
+SizeScreen([72]);
+
 LoadPackage("IncidenceStructures", false);
 
 s:=IncidenceStructureByBlocks([1..3],[[1],[1,2],[1,2,3]]);
@@ -25,4 +27,6 @@ SetInfoLevel(InfoIncidenceStructures,2);
 t:=IncidenceStructureByBlocks( "rozi", 
     ["or","iz","rz","oi","ir","oz"] );
 Isomorphism(s,t);
+HashValue(s);
+HashValue(t);
 StructureDescription(AutomorphismGroup(t));

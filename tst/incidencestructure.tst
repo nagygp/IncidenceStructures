@@ -31,7 +31,7 @@ gap> CanonicalLabellingOfIncidenceStructure(s);
 gap> KnownAttributesOfObject(s);
 [ "AutomorphismGroup", "IsIndexBasedIncidenceStructure", 
   "PointsOfIncidenceStructure", "BlocksOfIncidenceStructure", 
-  "CanonicalLabellingOfIncidenceStructure" ]
+  "CanonicalLabellingOfIncidenceStructure", "HashValue" ]
 gap> 
 gap> s:=IncidenceStructureByIncidenceMatrix( [1..4], "abcdef", 
 >     [[true,true,false,false],
@@ -63,6 +63,10 @@ gap> Isomorphism(s,t);
 #I  <outneigh> parameter for BLISS command: [ [ 2, 3 ], [ 1, 4 ], [ 3, 4 ], [ 1, 2 ], [ 1, 3 ], [ 2, 4 ] ]
 #I  <iso>: ( 1, 3, 4)( 6, 7, 9, 8,10)
 (1,3,4)(6,7,9,8,10)
+gap> HashValue(s);
+4078249033
+gap> HashValue(t);
+4078249033
 gap> StructureDescription(AutomorphismGroup(t));
 "S4"
 gap> STOP_TEST( "incidencestructure.tst", 10000 );
