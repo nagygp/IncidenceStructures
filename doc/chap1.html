@@ -44,7 +44,8 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap1.html#X7EA648417A5C0C0D">1.3-3 TraceOfPoint</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap1.html#X7E69CF7281AD5858">1.3-4 TraceOfBlock</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap1.html#X831F90AA7CDCD74B">1.3-5 AutomorphismGroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap1.html#X78CB346E8019BE4D">1.3-6 Isomorphism</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap1.html#X7C1DB6137FBF5E7A">1.3-6 HashValue</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap1.html#X78CB346E8019BE4D">1.3-7 Isomorphism</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap1.html#X7A489A5D79DA9E5C">1.4 <span class="Heading">Examples</span></a>
 </span>
@@ -176,9 +177,18 @@
 
 <p>The function computes the automorphism group of <var class="Arg">s</var> with the help of its incidence digraph.</p>
 
+<p><a id="X7C1DB6137FBF5E7A" name="X7C1DB6137FBF5E7A"></a></p>
+
+<h5>1.3-6 HashValue</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HashValue</code>( <var class="Arg">s</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: The hash value of the incidence structure <var class="Arg">s</var>.</p>
+
+<p>The function computes the value of <var class="Arg">s</var> with the help of canonical labeling of its incidence digraph.</p>
+
 <p><a id="X78CB346E8019BE4D" name="X78CB346E8019BE4D"></a></p>
 
-<h5>1.3-6 Isomorphism</h5>
+<h5>1.3-7 Isomorphism</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Isomorphism</code>( <var class="Arg">s1</var>, <var class="Arg">s2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Returns: An isomorphism between the incidence structures <var class="Arg">s1</var> and <var class="Arg">s1</var> if they are isomorphic, and <code class="keyw">fail</code> otherwise.</p>
@@ -235,6 +245,10 @@ true
 #I  &lt;outneigh&gt; parameter for BLISS command: [ [ 2, 3 ], [ 1, 4 ], [ 3, 4 ], [ 1, 2 ], [ 1, 3 ], [ 2, 4 ] ]
 #I  &lt;iso&gt;: ( 1, 3, 4)( 6, 7, 9, 8,10)
 (1,3,4)(6,7,9,8,10)
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HashValue(s);</span>
+4078249033
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HashValue(t);</span>
+4078249033
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">StructureDescription(AutomorphismGroup(t));</span>
 "S4"
 </pre></div>

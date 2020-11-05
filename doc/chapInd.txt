@@ -4,13 +4,14 @@
   
   [2XAutomorphismGroup[102X, for IsIncidenceStructure 1.3-5 
   [2XBlocksOfIncidenceStructure[102X, for IsIncidenceStructure 1.3-2 
+  [2XHashValue[102X, for IsIncidenceStructure 1.3-6 
   [2XIncidenceStructureByBlocks[102X 1.2-4 
   [2XIncidenceStructureByIncidenceMatrix[102X 1.2-2 
   [2XIncidenceStructureByIncidenceMatrixNC[102X 1.2-3 
   [2XInfoIncidenceStructures[102X 1.2-7 
   [2XIsIncidenceStructure[102X, for IsObject 1.2-1 
   [2XIsIndexBasedIncidenceStructure[102X, for IsIncidenceStructure 1.2-5 
-  [2XIsomorphism[102X, for IsIncidenceStructure, IsIncidenceStructure 1.3-6 
+  [2XIsomorphism[102X, for IsIncidenceStructure, IsIncidenceStructure 1.3-7 
   [2XIsSimpleIncidenceStructure[102X, for IsIncidenceStructure 1.2-6 
   [2XPointsOfIncidenceStructure[102X, for IsIncidenceStructure 1.3-1 
   [2XTraceOfBlock[102X, for IsIncidenceStructure, IsObject 1.3-4 

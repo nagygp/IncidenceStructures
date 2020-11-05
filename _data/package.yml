@@ -1,6 +1,6 @@
 name: IncidenceStructures
-version: "0.2"
-date: 2019-09-01
+version: "0.3"
+date: 2020-11-05
 description: |
     GAP implementation of abstract incidence structures
 
@@ -17,7 +17,7 @@ GAP: ">= 4.9"
 needed-pkgs:
     - name: "BlissInterface"
       version: ">=0.2"
-      url: "https://nagygp.github.io/BlissInterface/"
+      url: "https://gap-packages.github.io/BlissInterface/"
 
 www: https://nagygp.github.io/IncidenceStructures/
 readme: README.md
@@ -25,7 +25,7 @@ packageinfo: https://nagygp.github.io/IncidenceStructures/PackageInfo.g
 
 downloads:
     - name: .tar.gz
-      url: https://github.com/nagygp/IncidenceStructures/releases/download/v0.2/IncidenceStructures-0.2.tar.gz
+      url: https://github.com/nagygp/IncidenceStructures/releases/download/v0.3/IncidenceStructures-0.3.tar.gz
 
 abstract: |
 
@@ -36,28 +36,28 @@ keywords: |
     incidence, incidence structure, design, Steiner system, finite geometry.
 citeas: |
     <p class='BibEntry'>
-    [<span class='BibKey'>Nag19</span>]   <b class='BibAuthor'>Nagy, G. P.</b>,
+    [<span class='BibKey'>Nag20</span>]   <b class='BibAuthor'>Nagy, G. P.</b>,
      <i class='BibTitle'>IncidenceStructures, GAP implementation of abstract incidence structures,
-             Version 0.2</i>
-     (<span class='BibYear'>2019</span>)<br />
+             Version 0.3</i>
+     (<span class='BibYear'>2020</span>)<br />
     (<span class='BibNote'>GAP package</span>),
     <span class='BibHowpublished'><a href="https://nagygp.github.io/IncidenceStructures/">https://nagygp.github.io/IncidenceStructures/</a></span>.
     </p>
     
 
 bibtex: |
-    @misc{ IncidenceStructures0.2,
+    @misc{ IncidenceStructures0.3,
       author =           {Nagy, G. P.},
       title =            {{IncidenceStructures},  GAP implementation of abstract
-                          incidence structures, {V}ersion 0.2},
-      month =            {Sep},
-      year =             {2019},
+                          incidence structures, {V}ersion 0.3},
+      month =            {Nov},
+      year =             {2020},
       note =             {GAP package},
       howpublished =     {\href  {https://nagygp.github.io/IncidenceStructures/}
                           {\texttt{https://nagygp.github.io/}\discretionary
                           {}{}{}\texttt{IncidenceStructures/}}},
       keywords =         {incidence;   incidence   structure;   design;  Steiner
                           system; finite geometry},
-      printedkey =       {Nag19}
+      printedkey =       {Nag20}
     }
 

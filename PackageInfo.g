@@ -10,8 +10,8 @@ SetPackageInfo( rec(
 
 PackageName := "IncidenceStructures",
 Subtitle := "GAP implementation of abstract incidence structures",
-Version := "0.2",
-Date := "01/09/2019", # dd/mm/yyyy format
+Version := "0.3",
+Date := "05/11/2020", # dd/mm/yyyy format
 License := "GPL-2.0-or-later",
 
 Persons := [
@@ -80,5 +80,3 @@ TestFile := "tst/testall.g",
 Keywords := [ "incidence", "incidence structure", "design", "Steiner system", "finite geometry" ],
 
 ));
-
-
