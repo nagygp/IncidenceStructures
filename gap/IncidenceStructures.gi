@@ -4,71 +4,13 @@
 # Implementations
 #
 ###############################################################################
-##  UTILITIES
-##  ---------------------------------------------------------------------------
-
-# InstallGlobalFunction( PLIS_IncidenceStructureBlistList_axiomcheck,
-# function( bmat )
-#     local bmattr, q, i, j;
-#     q := SizeBlist( bmat[ 1 ] ) - 1;
-#     if ForAny( bmat, x -> SizeBlist( x ) <> q + 1 ) then
-#         return false;
-#     fi;
-#     bmattr := TransposedMat( bmat );
-#     for i in [ 1..q^3 ] do
-#         for j in [ i + 1..q^3 + 1 ] do
-#             if SizeBlist( IntersectionBlist( bmattr[ i ],
-#                                              bmattr[ j ] ) ) <> 1 then
-#                 return false;
-#             fi;
-#         od;
-#     od;
-#     return true;
-# end );
-
-# InstallGlobalFunction( PLIS_IsIncidenceStructureBlistList,
-# function( bmat )
-#     local q, i, j;
-#     q := SizeBlist( bmat[ 1 ] ) - 1;
-#     if Length( bmat ) <> q^2 * ( q^2 - q + 1 ) or
-#        ForAny( bmat, x -> Length( x ) <> q^3 + 1 ) then
-#         Error( "PLIS: wrong bmat size" );
-#     fi;
-#     return PLIS_IncidenceStructureBlistList_axiomcheck( bmat );
-# end );
-
-# InstallGlobalFunction( PLIS_IsIncidenceStructureIncidenceMatrix,
-# function( incmat )
-#     local q, bmat;
-#     bmat := List( incmat, x -> List( x, IsOne ) );
-#     q := SizeBlist( bmat[ 1 ] ) - 1;
-#     if Length( bmat ) <> q^2 * ( q^2 - q + 1 ) or
-#        ForAny( bmat, x -> Length( x ) <> q^3 + 1 ) then
-#         Error( "PLIS: wrong incmat size" );
-#     fi;
-#     return PLIS_IncidenceStructureBlistList_axiomcheck(bmat);
-# end );
-
-# InstallGlobalFunction( PLIS_IsIncidenceStructureBlockDesign,
-# function( bls )
-#     local q, bmat, pts;
-#     pts := Union( bls );
-#     q := Size( bls[ 1 ] ) - 1;
-#     if Length( bls ) <> q^2 * ( q^2 - q + 1 ) or Size( pts ) <> q^3 + 1 then
-#         Error( "PLIS: wrong number of points or blocks" );
-#     fi;
-#     bmat := List( bls, b -> BlistList( pts, b ) );
-#     return PLIS_IncidenceStructureBlistList_axiomcheck( bmat );
-# end );
-
-###############################################################################
 ##  CONSTRUCTORS
 ##  ---------------------------------------------------------------------------
 
 InstallGlobalFunction( IncidenceStructureByIncidenceMatrixNC,
 function( pts, bls, incmat )
     local s;
-    s := Objectify( NewType( PLIS_IncidenceStructureFamily, IsIncidenceStructure and
+    s := Objectify( NewType( IncidenceStructureFamily, IsIncidenceStructure and
                                IsIncidenceStructureRep ),
                       rec( bmat := incmat ) );
 	SetPointsOfIncidenceStructure( s, pts );
@@ -84,7 +26,7 @@ function( pts, bls, incmat )
 		Length( incmat[1] ) = Length( pts ) and
 		ForAll( incmat, IsBlist )
 	) then
-		Error( "PLIS: <3> must be a boolean matrix of size |<1>|x|<2>" );
+		Error( "IncStr: <3> must be a boolean matrix of size |<1>| x |<2>|" );
 	fi;		
 	return IncidenceStructureByIncidenceMatrixNC( pts, bls, incmat );
 end );
@@ -94,7 +36,7 @@ function( pts, bls )
     local q, bmat, s;
 	pts := Set( pts );
 	if not ForAll( bls, b -> IsSubset( pts, b ) ) then
-		Error( "PLIS: the elements of <2> must be subsets of <1>" );
+		Error( "IncStr: the elements of <2> must be subsets of <1>" );
 	fi;
     bmat := List( bls, b -> BlistList( pts, b ) );
 	s := IncidenceStructureByIncidenceMatrix( pts, bls, bmat );
@@ -121,7 +63,7 @@ InstallMethod( TraceOfBlock, "for an abstract incidence structure and an object"
     [ IsIncidenceStructure, IsObject ],
 function( s, bl )
 	if not bl in BlocksOfIncidenceStructure( s ) then
-		Error( "PLIS: <2> must be a block of <1>");
+		Error( "IncStr: <2> must be a block of <1>");
 	fi;
 	if IsIndexBasedIncidenceStructure( s ) then
 		return BlocksOfIncidenceStructure( s )[bl];
@@ -134,7 +76,7 @@ InstallMethod( TraceOfPoint, "for an abstract incidence structure and an object"
     [ IsIncidenceStructure, IsObject ],
 function( s, pt )
 	if not pt in PointsOfIncidenceStructure( s ) then
-		Error( "PLIS: <2> must be a point of <1>");
+		Error( "IncStr: <2> must be a point of <1>");
 	fi;
 	pt := Position( PointsOfIncidenceStructure( s ), pt );
 	pt := TransposedMat( s!.bmat )[pt];

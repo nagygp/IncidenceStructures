@@ -19,7 +19,7 @@ DeclareCategory( "IsIncidenceStructure", IsObject );
 
 DeclareRepresentation( "IsIncidenceStructureRep", IsComponentObjectRep and
                        IsAttributeStoringRep, [ "bmat" ] );
-PLIS_IncidenceStructureFamily := NewFamily( "IncidenceStructureFam" );
+IncidenceStructureFamily := NewFamily( "IncidenceStructureFam" );
 
 #####################################################
 #####################################################
