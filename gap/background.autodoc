@@ -1,5 +1,3 @@
-@AutoDocPlainText
-
 @Chapter Abstract incidence structures
 @Section Mathematical background
 
@@ -17,5 +15,3 @@ Let $(V,\mathbf{B},I)$ and $(V',\mathbf{B}',I')$ be incidence structures and let
 - $p I B \Leftrightarrow p^\pi I' B^\pi$ for all $p\in V$ and $B\in \mathbf{B}$. 
 
 In this case, the two incidence structures are said to be **isomorphic**. If $(V,\mathbf{B},I)=(V',\mathbf{B}',I')$, then $\pi$ is called an **automorphism**. 
-
-@EndAutoDocPlainText

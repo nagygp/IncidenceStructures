@@ -14,7 +14,7 @@ An <Emph>incidence structure</Emph> is a triple <Math>(V,\mathbf{B},I)</Math> wh
 <P/>
 The <Emph>trace</Emph> of a block <Math>B</Math> is the set <Math>\{ x \in V : x I B\}</Math> of the points incident with <Math>B</Math>. The <Emph>trace</Emph> of a point <Math>p</Math> is the set <Math>\{ B \in \mathbf{B} : p I B\}</Math> of the blocks incident with <Math>p</Math>. An incidence structure is called <Emph>simple</Emph> if the traces of distinct blocks are distinct. For any simple incidence structure, we can (and usually will) identify each block <Math>B</Math> with its trace and the incidence relation <Math>I</Math> with the membership relation <Math>\in</Math>.
 <P/>
-Let <Math>(V,\mathbf{B},I)</Math> and label the points as <Math>p_1,\ldots,p_v</Math> and the blocks <Math>B_1,\ldots,B_b</Math>. Then the <Math>b\times v</Math> matrix <Math>M=(m_{ij})</Math> defined by <Math>m_{ij}=1</Math> if <Math>p_j I B_i</Math>, <Math>m_{ij}=0</Math> otherwise, is called the <Emph>incidence matrix</Emph> of the structure. The row of <Math>M</Math> belonging to a block <Math>B</Math> is the <Emph>incidence vector</Emph> of <Math>B</Math>.
+Let <Math>(V,\mathbf{B},I)</Math> and label the points as <Math>p_1,\ldots,p_v</Math> and the blocks <Math>B_1,\ldots,B_b</Math>. Then the <Math>b\times v</Math> matrix <Math>M=(m_{ij})</Math> defined by <Math>m_{ij}=1</Math> if <Math>p_j I B_i</Math>, <Math>m_{ij}=0</Math> otherwise, is called the <Emph>incidence matrix</Emph> of the structure. The row of <Math>M</Math> belonging to a block <Math>B</Math> is the <Emph>incidence vector</Emph> of <Math>B</Math>. 
 <P/>
 Let <Math>(V,\mathbf{B},I)</Math> and <Math>(V',\mathbf{B}',I')</Math> be incidence structures and let <Math>\pi:V\cup \mathbf{B} \to V'\cup \mathbf{B}'</Math> be a bijection. <Math>\pi</Math> is called an <Emph>isomorphism</Emph> if and only if it satisfies:
 <P/>
@@ -23,12 +23,11 @@ Let <Math>(V,\mathbf{B},I)</Math> and <Math>(V',\mathbf{B}',I')</Math> be incide
 <Math>V^\pi =V'</Math> and <Math>\mathbf{B}^\pi =\mathbf{B}'</Math>;
 </Item>
 <Item>
-<Math>p I B \Leftrightarrow p^\pi I' B^\pi</Math> for all <Math>p\in V</Math> and <Math>B\in \mathbf{B}</Math>.
+<Math>p I B \Leftrightarrow p^\pi I' B^\pi</Math> for all <Math>p\in V</Math> and <Math>B\in \mathbf{B}</Math>. 
 </Item>
 </List>
 <P/>
-In this case, the two incidence structures are said to be <Emph>isomorphic</Emph>. If <Math>(V,\mathbf{B},I)=(V',\mathbf{B}',I')</Math>, then <Math>\pi</Math> is called an <Emph>automorphism</Emph>.
-<P/>
+In this case, the two incidence structures are said to be <Emph>isomorphic</Emph>. If <Math>(V,\mathbf{B},I)=(V',\mathbf{B}',I')</Math>, then <Math>\pi</Math> is called an <Emph>automorphism</Emph>. 
 </Section>
 
 
@@ -40,14 +39,16 @@ In this case, the two incidence structures are said to be <Emph>isomorphic</Emph
  <Returns><C>true</C> or <C>false</C>
 </Returns>
  <Description>
-A &GAP; category of abstract incidence structures.
+   A &GAP; category of abstract incidence structures. 
  </Description>
 </ManSection>
 
 
 <ManSection>
   <Func Arg="pts,bls,incmat" Name="IncidenceStructureByIncidenceMatrix" />
- <Returns>The incidence structure object corresponding to the set <A>pts</A> of points and the list <A>bls</A> of blocks and the incidence matrix <A>incmat</A>. <A>incmat</A> must be a boolean matrix with <C>|bls|</C> rows and <C>|pts|</C> columns.
+ <Returns>   The incidence structure object corresponding to the set <A>pts</A> of points and
+    the list <A>bls</A> of blocks and the incidence matrix <A>incmat</A>. <A>incmat</A>
+    must be a boolean matrix with <C>|bls|</C> rows and <C>|pts|</C> columns.
 </Returns>
  <Description>
 <P/>
@@ -58,14 +59,15 @@ A &GAP; category of abstract incidence structures.
 <ManSection>
   <Func Arg="pts,bls,incmat" Name="IncidenceStructureByIncidenceMatrixNC" />
  <Description>
-The non-checking version of the command <C>IncidenceStructureByIncidenceMatrix</C>.
+   The non-checking version of the command <C>IncidenceStructureByIncidenceMatrix</C>.
  </Description>
 </ManSection>
 
 
 <ManSection>
   <Func Arg="pts,bls" Name="IncidenceStructureByBlocks" />
- <Returns>The incidence structure object corresponding to the set <A>pts</A> of points and the list <A>bls</A> of blocks. The elements of <A>bls</A> must be subsets of <A>pts</A>.
+ <Returns>   The incidence structure object corresponding to the set <A>pts</A> of points and
+    the list <A>bls</A> of blocks. The elements of <A>bls</A> must be subsets of <A>pts</A>. 
 </Returns>
  <Description>
 <P/>
@@ -76,19 +78,19 @@ The non-checking version of the command <C>IncidenceStructureByIncidenceMatrix</
 <ManSection>
   <Attr Arg="s" Name="IsIndexBasedIncidenceStructure" Label="for IsIncidenceStructure"/>
  <Description>
-We call the incident structre <A>s</A> <Emph>index based</Emph> if its set of points is the
-integer range <C>[1..n]</C> and blocks are subsets of <C>[1..n]</C>.
+   We call the incident structre <A>s</A> <Emph>index based</Emph> if its set of points is the 
+   integer range <C>[1..n]</C> and blocks are subsets of <C>[1..n]</C>.
  </Description>
 </ManSection>
 
 
 <ManSection>
   <Attr Arg="s" Name="IsSimpleIncidenceStructure" Label="for IsIncidenceStructure"/>
- <Returns><K>true</K> if <A>s</A> is a simple incident structure.
+ <Returns>   <K>true</K> if <A>s</A> is a simple incident structure. 
 </Returns>
  <Description>
-An incident structure is said to be <Emph>simple</Emph> if each block is uniquely
-determined by the set of points which are incident with it.
+   An incident structure is said to be <Emph>simple</Emph> if each block is uniquely 
+   determined by the set of points which are incident with it. 
  </Description>
 </ManSection>
 
@@ -96,7 +98,7 @@ determined by the set of points which are incident with it.
 <ManSection>
   <InfoClass Name="InfoIncidenceStructures" />
  <Description>
-An infoclass for the package. Its default value is <Math>0</Math>.
+   An infoclass for the package. Its default value is <Math>0</Math>.
  </Description>
 </ManSection>
 
@@ -109,7 +111,7 @@ An infoclass for the package. Its default value is <Math>0</Math>.
 
 <ManSection>
   <Attr Arg="s" Name="PointsOfIncidenceStructure" Label="for IsIncidenceStructure"/>
- <Returns>The list of points of the incidence structure <A>s</A>.
+ <Returns>   The list of points of the incidence structure <A>s</A>.
 </Returns>
  <Description>
 <P/>
@@ -119,7 +121,7 @@ An infoclass for the package. Its default value is <Math>0</Math>.
 
 <ManSection>
   <Attr Arg="s" Name="BlocksOfIncidenceStructure" Label="for IsIncidenceStructure"/>
- <Returns>The list of blocks of the incidence structure <A>s</A>.
+ <Returns>   The list of blocks of the incidence structure <A>s</A>.
 </Returns>
  <Description>
 <P/>
@@ -129,7 +131,7 @@ An infoclass for the package. Its default value is <Math>0</Math>.
 
 <ManSection>
   <Oper Arg="s,pt" Name="TraceOfPoint" Label="for IsIncidenceStructure, IsObject"/>
- <Returns>The list of blocks which are incident with <A>pt</A> in the incidence structure <A>s</A>.
+ <Returns>   The list of blocks which are incident with <A>pt</A> in the incidence structure <A>s</A>.
 </Returns>
  <Description>
 <P/>
@@ -139,7 +141,7 @@ An infoclass for the package. Its default value is <Math>0</Math>.
 
 <ManSection>
   <Oper Arg="s,bl" Name="TraceOfBlock" Label="for IsIncidenceStructure, IsObject"/>
- <Returns>The list of points which are incident with <A>bl</A> in the incidence structure <A>s</A>.
+ <Returns>   The list of points which are incident with <A>bl</A> in the incidence structure <A>s</A>.
 </Returns>
  <Description>
 <P/>
@@ -149,33 +151,45 @@ An infoclass for the package. Its default value is <Math>0</Math>.
 
 <ManSection>
   <Attr Arg="s" Name="AutomorphismGroup" Label="for IsIncidenceStructure"/>
- <Returns>The automorphism group of the incidence structure <A>s</A>.
+ <Returns>   The automorphism group of the incidence structure <A>s</A>.
 </Returns>
  <Description>
-The function computes the automorphism group of <A>s</A> with the help of
-its incidence digraph.
+   The function computes the automorphism group of <A>s</A> with the help of
+   its incidence digraph.
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Arg="s" Name="HashValue" Label="for IsIncidenceStructure"/>
+ <Returns>   The hash value of the incidence structure <A>s</A>.
+</Returns>
+ <Description>
+   The function computes the value of <A>s</A> with the help of canonical labeling of 
+   its incidence digraph. 
  </Description>
 </ManSection>
 
 
 <ManSection>
   <Oper Arg="s1, s2" Name="Isomorphism" Label="for IsIncidenceStructure, IsIncidenceStructure"/>
- <Returns>An isomorphism between the incidence structures <A>s1</A> and <A>s1</A> if they are isomorphic, and <K>fail</K> otherwise.
+ <Returns>   An isomorphism between the incidence structures <A>s1</A> and <A>s1</A> if they are
+    isomorphic, and <K>fail</K> otherwise.
 </Returns>
  <Description>
-The isomorphism is a bijection between the points sets and between the line sets of
-the incidence structures <Math>S_1</Math> and <Math>S_2</Math> such that the incidence relations are
-preserved. In this implementation, an isomorphism is given by a permutation <Math>\beta</Math>
-of degree <Math>n+m</Math>, where <Math>n</Math> is the number of points and <Math>m</Math> is the number of lines.
-The bijections defined by <Math>\beta</Math> are <Math>p[i]\mapsto p'[i^\beta]</Math> and <Math>b[j]
-\mapsto b'[(j+n)^\beta-n]</Math>, where <Math>p[i]</Math>, <Math>p'[i']</Math> are points and <Math>b[j]</Math>, <Math>b'[j']</Math> are
-blocks of <Math>S_1</Math>, <Math>S_2</Math>, respectively.
+   The isomorphism is a bijection between the points sets and between the line sets of 
+   the incidence structures <Math>S_1</Math> and <Math>S_2</Math> such that the incidence relations are 
+   preserved. In this implementation, an isomorphism is given by a permutation <Math>\beta</Math> 
+   of degree <Math>n+m</Math>, where <Math>n</Math> is the number of points and <Math>m</Math> is the number of lines. 
+   The bijections defined by <Math>\beta</Math> are <Math>p[i]\mapsto p'[i^\beta]</Math> and <Math>b[j] 
+   \mapsto b'[(j+n)^\beta-n]</Math>, where <Math>p[i]</Math>, <Math>p'[i']</Math> are points and <Math>b[j]</Math>, <Math>b'[j']</Math> are 
+   blocks of <Math>S_1</Math>, <Math>S_2</Math>, respectively. 
 <P/>
-Canonocal labellings, automorphisms and isomorphisms of incidence structures are
-computed with the help of their <Emph>incidence graphs</Emph>, which is are bipartite graphs
-with upper vertices the points and lower vertices the blocks. The computation
-is done using the &GAP; package <Package>BlissInterface</Package> <Cite
-Key="BlissInterface0.2" />.
+   Canonocal labellings, automorphisms and isomorphisms of incidence structures are  
+   computed with the help of their <Emph>incidence graphs</Emph>, which is are bipartite graphs
+   with upper vertices the points and lower vertices the blocks. The computation
+   is done using the &GAP; package <Package>BlissInterface</Package> <Cite 
+   Key="BlissInterface0.2" />.
  </Description>
 </ManSection>
 
@@ -230,12 +244,15 @@ gap> Isomorphism(s,t);
 #I  <outneigh> parameter for BLISS command: [ [ 2, 3 ], [ 1, 4 ], [ 3, 4 ], [ 1, 2 ], [ 1, 3 ], [ 2, 4 ] ]
 #I  <iso>: ( 1, 3, 4)( 6, 7, 9, 8,10)
 (1,3,4)(6,7,9,8,10)
+gap> HashValue(s);
+4078249033
+gap> HashValue(t);
+4078249033
 gap> StructureDescription(AutomorphismGroup(t));
 "S4"
 ]]></Example>
 
 
-<P/>
 </Section>
 
 
