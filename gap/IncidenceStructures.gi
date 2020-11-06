@@ -152,18 +152,17 @@ function( s )
 	Info( InfoIncidenceStructures, 1, "BLISS_BIPARTITE_CANONICAL_LABELING called" );
 	Info( InfoIncidenceStructures, 2, "<outneigh> parameter for BLISS command: ", outneigh );
 	cl := BLISS_BIPARTITE_CANONICAL_LABELING( nrp, nrb, outneigh, ucolours, lcolours );
-#	cl := BlissBipartiteCanonicalLabeling( nrp, nrb, outneigh, ucolours, lcolours );
 	if cl[1] = [] then cl[1] := (); fi;
-    SetAutomorphismGroup( s, Group( cl[1] ) );
+	SetAutomorphismGroupOnPointsAndLines( s, Group( cl[1] ) );
 	SetHashValue( s, cl[3] );
     return cl[2];
 end );
 
-InstallMethod( AutomorphismGroup, "for an abstract incidence structure",
+InstallMethod( AutomorphismGroupOnPointsAndLines, "for an abstract incidence structure",
     [ IsIncidenceStructure ],
 function( s )
     CanonicalLabellingOfIncidenceStructure( s );
-    return AutomorphismGroup( s );
+    return AutomorphismGroupOnPointsAndLines( s );
 end );
 
 InstallMethod( HashValue, "for an abstract incidence structure",
@@ -197,7 +196,7 @@ function( s1, s2 )
 		# a_{ij} = a^*_{\beta(n+i)-n,\beta(j)}
 		ret := ( s1!.bmat[i][j] = s2!.bmat[(nrp+i)^iso-nrp][j^iso] );
 		if not ret then 
-			Print("# ",i," ",j,"\n");
+			Info( InfoIncidenceStructures, 2, "wrong position in incidence matrix: (", i, ",", j, ")" );
 			break;
 		fi;
 		j := j + 1;

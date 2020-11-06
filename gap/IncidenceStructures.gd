@@ -102,11 +102,12 @@ DeclareAttribute( "BlockColoringOfIncidenceStructure", IsIncidenceStructure );
 #! @ChapterInfo Abstract incidence structures, Methods for abstract incidence structures
 #! @Arguments s
 #! @Returns
-#!   The automorphism group of the incidence structure <A>s</A>.
+#!   The automorphism group of the incidence structure <A>s</A>, acting on the union
+#!   of the sets of points and lines.
 #! @Description
 #!   The function computes the automorphism group of <A>s</A> with the help of
 #!   its incidence digraph.
-DeclareAttribute( "AutomorphismGroup", IsIncidenceStructure );
+DeclareAttribute( "AutomorphismGroupOnPointsAndLines", IsIncidenceStructure );
 
 #! @ChapterInfo Abstract incidence structures, Methods for abstract incidence structures
 #! @Arguments s
