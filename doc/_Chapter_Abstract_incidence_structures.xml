@@ -150,8 +150,9 @@ In this case, the two incidence structures are said to be <Emph>isomorphic</Emph
 
 
 <ManSection>
-  <Attr Arg="s" Name="AutomorphismGroup" Label="for IsIncidenceStructure"/>
- <Returns>   The automorphism group of the incidence structure <A>s</A>.
+  <Attr Arg="s" Name="AutomorphismGroupOnPointsAndLines" Label="for IsIncidenceStructure"/>
+ <Returns>   The automorphism group of the incidence structure <A>s</A>, acting on the union
+    of the sets of points and lines.
 </Returns>
  <Description>
    The function computes the automorphism group of <A>s</A> with the help of
@@ -172,7 +173,7 @@ In this case, the two incidence structures are said to be <Emph>isomorphic</Emph
 
 
 <ManSection>
-  <Oper Arg="s1, s2" Name="Isomorphism" Label="for IsIncidenceStructure, IsIncidenceStructure"/>
+  <Oper Arg="s1, s2" Name="IsomorphismIncidenceStructures" Label="for IsIncidenceStructure, IsIncidenceStructure"/>
  <Returns>   An isomorphism between the incidence structures <A>s1</A> and <A>s1</A> if they are
     isomorphic, and <K>fail</K> otherwise.
 </Returns>
@@ -213,7 +214,7 @@ gap> BlocksOfIncidenceStructure(s);
 gap> CanonicalLabellingOfIncidenceStructure(s);
 (1,3)
 gap> KnownAttributesOfObject(s);
-[ "AutomorphismGroup", "IsIndexBasedIncidenceStructure", 
+[ "AutomorphismGroupOnPointsAndLines", "IsIndexBasedIncidenceStructure", 
   "PointsOfIncidenceStructure", "BlocksOfIncidenceStructure", 
   "CanonicalLabellingOfIncidenceStructure" ]
 gap> s:=IncidenceStructureByIncidenceMatrix( [1..4], "abcdef", 
@@ -233,13 +234,13 @@ gap> SetInfoLevel(InfoIncidenceStructures,1);
 gap> CanonicalLabellingOfIncidenceStructure(s);
 #I  BLISS_BIPARTITE_CANONICAL_LABELING called
 (1,4)(2,3)(5,10,9)(6,8)
-gap> StructureDescription(AutomorphismGroup(s));
+gap> StructureDescription(AutomorphismGroupOnPointsAndLines(s));
 "S4"
 gap> SetInfoLevel(InfoIncidenceStructures,2);
 gap> t:=IncidenceStructureByBlocks( "rozi", 
 >      ["or","iz","rz","oi","ir","oz"] );                                               
 <Incidence structure on 4 points>
-gap> Isomorphism(s,t);
+gap> IsomorphismIncidenceStructures(s,t);
 #I  BLISS_BIPARTITE_CANONICAL_LABELING called
 #I  <outneigh> parameter for BLISS command: [ [ 2, 3 ], [ 1, 4 ], [ 3, 4 ], [ 1, 2 ], [ 1, 3 ], [ 2, 4 ] ]
 #I  <iso>: ( 1, 3, 4)( 6, 7, 9, 8,10)
@@ -248,7 +249,7 @@ gap> HashValue(s);
 4078249033
 gap> HashValue(t);
 4078249033
-gap> StructureDescription(AutomorphismGroup(t));
+gap> StructureDescription(AutomorphismGroupOnPointsAndLines(t));
 "S4"
 ]]></Example>
 

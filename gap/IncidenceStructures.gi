@@ -153,26 +153,26 @@ function( s )
 	Info( InfoIncidenceStructures, 2, "<outneigh> parameter for BLISS command: ", outneigh );
 	cl := BLISS_BIPARTITE_CANONICAL_LABELING( nrp, nrb, outneigh, ucolours, lcolours );
 	if cl[1] = [] then cl[1] := (); fi;
-	SetAutomorphismGroupOnPointsAndLines( s, Group( cl[1] ) );
-	SetHashValue( s, cl[3] );
-    return cl[2];
+	s!.autGrGens := cl[1];
+	s!.hash := cl[3];
+	return cl[2];
 end );
 
 InstallMethod( AutomorphismGroupOnPointsAndLines, "for an abstract incidence structure",
     [ IsIncidenceStructure ],
 function( s )
-    CanonicalLabellingOfIncidenceStructure( s );
-    return AutomorphismGroupOnPointsAndLines( s );
+	CanonicalLabellingOfIncidenceStructure( s );
+    return Group( s!.autGrGens );
 end );
 
 InstallMethod( HashValue, "for an abstract incidence structure",
     [ IsIncidenceStructure ],
 function( s )
-    CanonicalLabellingOfIncidenceStructure( s );
-    return HashValue( s );
+	CanonicalLabellingOfIncidenceStructure( s );
+    return s!.hash;
 end );
 
-InstallMethod( Isomorphism, "for two abstract incidence structures",
+InstallMethod( IsomorphismIncidenceStructures, "for two abstract incidence structures",
     [ IsIncidenceStructure, IsIncidenceStructure ],
 function( s1, s2 )
 	local nrp, nrb, i, j, iso, ret;

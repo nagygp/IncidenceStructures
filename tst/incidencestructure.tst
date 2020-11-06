@@ -29,9 +29,9 @@ gap> BlocksOfIncidenceStructure(s);
 gap> CanonicalLabellingOfIncidenceStructure(s);
 (1,3)
 gap> KnownAttributesOfObject(s);
-[ "AutomorphismGroup", "IsIndexBasedIncidenceStructure", 
-  "PointsOfIncidenceStructure", "BlocksOfIncidenceStructure", 
-  "CanonicalLabellingOfIncidenceStructure", "HashValue" ]
+[ "IsIndexBasedIncidenceStructure", "PointsOfIncidenceStructure", 
+  "BlocksOfIncidenceStructure", 
+  "CanonicalLabellingOfIncidenceStructure" ]
 gap> 
 gap> s:=IncidenceStructureByIncidenceMatrix( [1..4], "abcdef", 
 >     [[true,true,false,false],
@@ -51,14 +51,14 @@ gap> SetInfoLevel(InfoIncidenceStructures,1);
 gap> CanonicalLabellingOfIncidenceStructure(s);
 #I  BLISS_BIPARTITE_CANONICAL_LABELING called
 (1,4)(2,3)(5,10,9)(6,8)
-gap> StructureDescription(AutomorphismGroup(s));
+gap> StructureDescription(AutomorphismGroupOnPointsAndLines(s));
 "S4"
 gap> 
 gap> SetInfoLevel(InfoIncidenceStructures,2);
 gap> t:=IncidenceStructureByBlocks( "rozi", 
 >     ["or","iz","rz","oi","ir","oz"] );
 <Incidence structure on 4 points>
-gap> Isomorphism(s,t);
+gap> IsomorphismIncidenceStructures(s,t);
 #I  BLISS_BIPARTITE_CANONICAL_LABELING called
 #I  <outneigh> parameter for BLISS command: [ [ 2, 3 ], [ 1, 4 ], [ 3, 4 ], [ 1, 2 ], [ 1, 3 ], [ 2, 4 ] ]
 #I  <iso>: ( 1, 3, 4)( 6, 7, 9, 8,10)
@@ -67,7 +67,7 @@ gap> HashValue(s);
 4078249033
 gap> HashValue(t);
 4078249033
-gap> StructureDescription(AutomorphismGroup(t));
+gap> StructureDescription(AutomorphismGroupOnPointsAndLines(t));
 "S4"
 gap> STOP_TEST( "incidencestructure.tst", 10000 );
 ## The first argument of STOP_TEST should be the name of the test file.

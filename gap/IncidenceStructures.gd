@@ -137,7 +137,7 @@ DeclareAttribute( "HashValue", IsIncidenceStructure );
 #!   with upper vertices the points and lower vertices the blocks. The computation
 #!   is done using the &GAP; package <Package>BlissInterface</Package> <Cite 
 #!   Key="BlissInterface0.2" />.
-DeclareOperation( "Isomorphism", [ IsIncidenceStructure, IsIncidenceStructure ] );
+DeclareOperation( "IsomorphismIncidenceStructures", [ IsIncidenceStructure, IsIncidenceStructure ] );
 
 #####################################################
 #####################################################
