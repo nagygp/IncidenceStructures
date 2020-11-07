@@ -21,12 +21,12 @@ TraceOfBlock(s,'c');
 
 SetInfoLevel(InfoIncidenceStructures,1);
 CanonicalLabellingOfIncidenceStructure(s);
-StructureDescription(AutomorphismGroupOnPointsAndLines(s));
+StructureDescription(AutomorphismGroup@IncidenceStructures(s));
 
 SetInfoLevel(InfoIncidenceStructures,2);
 t:=IncidenceStructureByBlocks( "rozi", 
     ["or","iz","rz","oi","ir","oz"] );
-IsomorphismIncidenceStructures(s,t);
+Isomorphism@IncidenceStructures(s,t);
 HashValue(s);
 HashValue(t);
-StructureDescription(AutomorphismGroupOnPointsAndLines(t));
+StructureDescription(AutomorphismGroup@IncidenceStructures(t));

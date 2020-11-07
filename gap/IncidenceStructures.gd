@@ -107,7 +107,7 @@ DeclareAttribute( "BlockColoringOfIncidenceStructure", IsIncidenceStructure );
 #! @Description
 #!   The function computes the automorphism group of <A>s</A> with the help of
 #!   its incidence digraph.
-DeclareAttribute( "AutomorphismGroupOnPointsAndLines", IsIncidenceStructure );
+DeclareAttribute( "AutomorphismGroup@", IsIncidenceStructure );
 
 #! @ChapterInfo Abstract incidence structures, Methods for abstract incidence structures
 #! @Arguments s
@@ -137,7 +137,7 @@ DeclareAttribute( "HashValue", IsIncidenceStructure );
 #!   with upper vertices the points and lower vertices the blocks. The computation
 #!   is done using the &GAP; package <Package>BlissInterface</Package> <Cite 
 #!   Key="BlissInterface0.2" />.
-DeclareOperation( "IsomorphismIncidenceStructures", [ IsIncidenceStructure, IsIncidenceStructure ] );
+DeclareOperation( "Isomorphism@", [ IsIncidenceStructure, IsIncidenceStructure ] );
 
 #####################################################
 #####################################################

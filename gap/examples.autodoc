@@ -13,7 +13,7 @@ BlocksOfIncidenceStructure(s);
 CanonicalLabellingOfIncidenceStructure(s);
 #! (1,3)
 KnownAttributesOfObject(s);
-#! [ "AutomorphismGroupOnPointsAndLines", "IsIndexBasedIncidenceStructure", 
+#! [ "AutomorphismGroup@", "IsIndexBasedIncidenceStructure", 
 #!   "PointsOfIncidenceStructure", "BlocksOfIncidenceStructure", 
 #!   "CanonicalLabellingOfIncidenceStructure" ]
 s:=IncidenceStructureByIncidenceMatrix( [1..4], "abcdef", 
@@ -33,13 +33,45 @@ SetInfoLevel(InfoIncidenceStructures,1);
 CanonicalLabellingOfIncidenceStructure(s);
 #! #I  BLISS_BIPARTITE_CANONICAL_LABELING called
 #! (1,4)(2,3)(5,10,9)(6,8)
-StructureDescription(AutomorphismGroupOnPointsAndLines(s));
+StructureDescription(AutomorphismGroup@SizeScreen([72]);
+
+LoadPackage("IncidenceStructures", false);
+
+s:=IncidenceStructureByBlocks([1..3],[[1],[1,2],[1,2,3]]);
+PointsOfIncidenceStructure(s);
+BlocksOfIncidenceStructure(s);
+CanonicalLabellingOfIncidenceStructure(s);
+KnownAttributesOfObject(s);
+
+s:=IncidenceStructureByIncidenceMatrix( [1..4], "abcdef", 
+    [[true,true,false,false],
+    [true,false,true,false],
+    [true,false,false,true],
+    [false,true,true,false],
+    [false,true,false,true],
+    [false,false,true,true]]
+);
+TraceOfPoint(s,2);
+TraceOfBlock(s,'c');
+
+SetInfoLevel(InfoIncidenceStructures,1);
+CanonicalLabellingOfIncidenceStructure(s);
+StructureDescription(AutomorphismGroup@IncidenceStructures(s));
+
+SetInfoLevel(InfoIncidenceStructures,2);
+t:=IncidenceStructureByBlocks( "rozi", 
+    ["or","iz","rz","oi","ir","oz"] );
+Isomorphism@(s,t);
+HashValue(s);
+HashValue(t);
+StructureDescription(AutomorphismGroup@IncidenceStructures(t));
+(s));
 #! "S4"
 SetInfoLevel(InfoIncidenceStructures,2);
 t:=IncidenceStructureByBlocks( "rozi", 
      ["or","iz","rz","oi","ir","oz"] );                                               
 #! <Incidence structure on 4 points>
-IsomorphismIncidenceStructures(s,t);
+Isomorphism@IncidenceStructures(s,t);
 #! #I  BLISS_BIPARTITE_CANONICAL_LABELING called
 #! #I  <outneigh> parameter for BLISS command: [ [ 2, 3 ], [ 1, 4 ], [ 3, 4 ], [ 1, 2 ], [ 1, 3 ], [ 2, 4 ] ]
 #! #I  <iso>: ( 1, 3, 4)( 6, 7, 9, 8,10)
@@ -48,6 +80,6 @@ HashValue(s);
 #! 4078249033
 HashValue(t);
 #! 4078249033
-StructureDescription(AutomorphismGroupOnPointsAndLines(t));
+StructureDescription(AutomorphismGroup@IncidenceStructures(t));
 #! "S4"
 @EndExample

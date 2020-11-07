@@ -158,7 +158,7 @@ function( s )
 	return cl[2];
 end );
 
-InstallMethod( AutomorphismGroupOnPointsAndLines, "for an abstract incidence structure",
+InstallMethod( AutomorphismGroup@, "for an abstract incidence structure",
     [ IsIncidenceStructure ],
 function( s )
 	CanonicalLabellingOfIncidenceStructure( s );
@@ -172,7 +172,7 @@ function( s )
     return s!.hash;
 end );
 
-InstallMethod( IsomorphismIncidenceStructures, "for two abstract incidence structures",
+InstallMethod( Isomorphism@, "for two abstract incidence structures",
     [ IsIncidenceStructure, IsIncidenceStructure ],
 function( s1, s2 )
 	local nrp, nrb, i, j, iso, ret;
