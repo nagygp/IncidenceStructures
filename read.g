@@ -4,3 +4,4 @@
 # Reading the implementation part of the package.
 #
 ReadPackage( "IncidenceStructures", "gap/IncidenceStructures.gi");
+ReadPackage( "IncidenceStructures", "gap/export.gi");

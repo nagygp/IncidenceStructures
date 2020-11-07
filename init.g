@@ -5,3 +5,4 @@
 #
 
 ReadPackage( "IncidenceStructures", "gap/IncidenceStructures.gd");
+ReadPackage( "IncidenceStructures", "gap/export.gd");

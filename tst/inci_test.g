@@ -30,3 +30,7 @@ Isomorphism@IncidenceStructures(s,t);
 HashValue(s);
 HashValue(t);
 StructureDescription(AutomorphismGroup@IncidenceStructures(t));
+
+
+BmatToString@IncidenceStructures(s!.bmat);
+BmatFromString@IncidenceStructures(last);

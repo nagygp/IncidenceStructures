@@ -284,5 +284,34 @@ gap> StructureDescription(AutomorphismGroup@IncidenceStructures(t));
 </Section>
 
 
+<Section Label="Chapter_Abstract_incidence_structures_Section_Utilities">
+<Heading>Utilities</Heading>
+
+<ManSection>
+  <Func Arg="mat" Name="BmatToString@" />
+ <Returns>   A string encoding the Boolean matrix <A>mat</A>.
+</Returns>
+ <Description>
+   The encoding string consists of three space separated parts <C>n m x</C>. 
+   The integers <C>n</C>, <C>m</C> are number of rows and columns. 
+   The string <C>x</C> is the graph6-type 
+   encoding of the Boolean matrix, concatenated into one binary vector. 
+ </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="str" Name="BmatFromString@" />
+ <Returns>   A Boolean matrix, encoded by the string <A>str</A> as explained above.
+</Returns>
+ <Description>
+   The result is unpredicted when the argument string is not well formed. 
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
 </Chapter>
 

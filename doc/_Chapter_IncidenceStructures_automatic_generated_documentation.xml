@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_IncidenceStructures_automatic_generated_documentation">
+<Heading>IncidenceStructures automatic generated documentation</Heading>
+
+<Section Label="Chapter_IncidenceStructures_automatic_generated_documentation_Section_IncidenceStructures_automatic_generated_documentation_of_global_functions">
+<Heading>IncidenceStructures automatic generated documentation of global functions</Heading>
+
+<ManSection>
+  <Func Arg="arg" Name="DecodeFromString@" />
+ <Description>
+<P/>
+ </Description>
+</ManSection>
+
+
+</Section>
+
+
+</Chapter>
+
