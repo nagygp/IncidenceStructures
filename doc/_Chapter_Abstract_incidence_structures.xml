@@ -203,8 +203,9 @@ In this case, the two incidence structures are said to be <Emph>isomorphic</Emph
 
 <P/>
 <Example><![CDATA[
-gap> LoadPackage("IncidenceStructures",false);       
+gap> LoadPackage("IncidenceStructures", false);
 true
+gap> 
 gap> s:=IncidenceStructureByBlocks([1..3],[[1],[1,2],[1,2,3]]);
 <Incidence structure on 3 points>
 gap> PointsOfIncidenceStructure(s);
@@ -214,33 +215,10 @@ gap> BlocksOfIncidenceStructure(s);
 gap> CanonicalLabellingOfIncidenceStructure(s);
 (1,3)
 gap> KnownAttributesOfObject(s);
-[ "AutomorphismGroup@", "IsIndexBasedIncidenceStructure", 
-  "PointsOfIncidenceStructure", "BlocksOfIncidenceStructure", 
+[ "IsIndexBasedIncidenceStructure", "PointsOfIncidenceStructure", 
+  "BlocksOfIncidenceStructure", 
   "CanonicalLabellingOfIncidenceStructure" ]
-gap> s:=IncidenceStructureByIncidenceMatrix( [1..4], "abcdef", 
->      [[true,true,false,false],
->      [true,false,true,false],
->      [true,false,false,true],
->      [false,true,true,false],
->      [false,true,false,true],
->      [false,false,true,true]]
-> );
-<Incidence structure on 4 points>
-gap> TraceOfPoint(s,2);
-"ade"
-gap> TraceOfBlock(s,'c');
-[ 1, 4 ]
-gap> SetInfoLevel(InfoIncidenceStructures,1);
-gap> CanonicalLabellingOfIncidenceStructure(s);
-#I  BLISS_BIPARTITE_CANONICAL_LABELING called
-(1,4)(2,3)(5,10,9)(6,8)
-gap> StructureDescription(AutomorphismGroup@SizeScreen([72]);
-gap> LoadPackage("IncidenceStructures", false);
-gap> s:=IncidenceStructureByBlocks([1..3],[[1],[1,2],[1,2,3]]);
-gap> PointsOfIncidenceStructure(s);
-gap> BlocksOfIncidenceStructure(s);
-gap> CanonicalLabellingOfIncidenceStructure(s);
-gap> KnownAttributesOfObject(s);
+gap> 
 gap> s:=IncidenceStructureByIncidenceMatrix( [1..4], "abcdef", 
 >     [[true,true,false,false],
 >     [true,false,true,false],
@@ -249,33 +227,33 @@ gap> s:=IncidenceStructureByIncidenceMatrix( [1..4], "abcdef",
 >     [false,true,false,true],
 >     [false,false,true,true]]
 > );
+<Incidence structure on 4 points>
 gap> TraceOfPoint(s,2);
+"ade"
 gap> TraceOfBlock(s,'c');
+[ 1, 4 ]
+gap> 
 gap> SetInfoLevel(InfoIncidenceStructures,1);
 gap> CanonicalLabellingOfIncidenceStructure(s);
+#I  GraphCanonicalLabeling@glabella called
+(1,4)(2,3)(5,10,9)(6,8)
 gap> StructureDescription(AutomorphismGroup@IncidenceStructures(s));
+"S4"
+gap> 
 gap> SetInfoLevel(InfoIncidenceStructures,2);
 gap> t:=IncidenceStructureByBlocks( "rozi", 
 >     ["or","iz","rz","oi","ir","oz"] );
-gap> Isomorphism@(s,t);
-gap> HashValue(s);
-gap> HashValue(t);
-gap> StructureDescription(AutomorphismGroup@IncidenceStructures(t));
-gap> (s));
-"S4"
-gap> SetInfoLevel(InfoIncidenceStructures,2);
-gap> t:=IncidenceStructureByBlocks( "rozi", 
->      ["or","iz","rz","oi","ir","oz"] );                                               
 <Incidence structure on 4 points>
 gap> Isomorphism@IncidenceStructures(s,t);
-#I  BLISS_BIPARTITE_CANONICAL_LABELING called
-#I  <outneigh> parameter for BLISS command: [ [ 2, 3 ], [ 1, 4 ], [ 3, 4 ], [ 1, 2 ], [ 1, 3 ], [ 2, 4 ] ]
+#I  GraphCanonicalLabeling@glabella called
+#I  <outneigh> parameter for glabella command: [ [  ], [  ], [  ], [  ], [ 2, 3 ], [ 1, 4 ], [ 3, 4 ], [ 1, 2 ], 
+  [ 1, 3 ], [ 2, 4 ] ]
 #I  <iso>: ( 1, 3, 4)( 6, 7, 9, 8,10)
 (1,3,4)(6,7,9,8,10)
 gap> HashValue(s);
-4078249033
+2786093497
 gap> HashValue(t);
-4078249033
+2786093497
 gap> StructureDescription(AutomorphismGroup@IncidenceStructures(t));
 "S4"
 ]]></Example>

@@ -137,21 +137,22 @@ function( s )
 	if HasPointColoringOfIncidenceStructure( s ) then
 		ucolours := PointColoringOfIncidenceStructure( s );
 	else 
-		ucolours := false;
+		ucolours := ListWithIdenticalEntries( nrp, 1 );
 	fi;
 	if HasBlockColoringOfIncidenceStructure( s ) then
 		lcolours := BlockColoringOfIncidenceStructure( s );
 	else 
-		lcolours := false;
+		lcolours := ListWithIdenticalEntries( nrb, 1 );
 	fi;
 	if IsIndexBasedIncidenceStructure( s ) then
 		outneigh := BlocksOfIncidenceStructure( s );
 	else
 		outneigh := List( s!.bmat, r -> ListBlist( [1..nrp], r ) );
 	fi;
-	Info( InfoIncidenceStructures, 1, "BLISS_BIPARTITE_CANONICAL_LABELING called" );
-	Info( InfoIncidenceStructures, 2, "<outneigh> parameter for BLISS command: ", outneigh );
-	cl := BLISS_BIPARTITE_CANONICAL_LABELING( nrp, nrb, outneigh, ucolours, lcolours );
+	outneigh := Concatenation( List([1..nrp], i->[] ), outneigh );
+	Info( InfoIncidenceStructures, 1, "GraphCanonicalLabelingNC@glabella called" );
+	Info( InfoIncidenceStructures, 2, "<outneigh> parameter for glabella command: ", outneigh );
+	cl := GraphCanonicalLabelingNC@glabella( nrp+nrb, outneigh, Concatenation(ucolours, lcolours), true, "bliss" );
 	if cl[1] = [] then cl[1] := (); fi;
 	s!.autGrGens := cl[1];
 	s!.hash := cl[3];
