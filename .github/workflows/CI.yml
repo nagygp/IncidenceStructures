@@ -1,48 +1,23 @@
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 name: CI
 
-# Trigger the workflow on push or pull request
 on:
-  - push
-  - pull_request
+  push:
+    branches:
+      - master # change this to 'main' if necessary!
+  pull_request:
 
 jobs:
   # The CI test job
   test:
-    name: ${{ matrix.gap-branch }} ${{ matrix.ABI }}
+    name: CI test
     runs-on: ubuntu-latest
     env: 
       GAP_PKGS_TO_CLONE: nagygp/glabella
       GAP_PKGS_TO_BUILD: "io profiling glabella"
-    # Don't run this twice on PRs for branches pushed to the same repository
-    if: ${{ !(github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository) }}
-    strategy:
-      fail-fast: false
-      matrix:
-        gap-branch:
-          - master
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          path: main
+      - uses: actions/checkout@v2
       - uses: gap-actions/setup-gap-for-packages@v1
       - uses: gap-actions/run-test-for-packages@v1
 
