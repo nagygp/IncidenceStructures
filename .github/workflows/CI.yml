@@ -1,4 +1,3 @@
-
 name: CI
 
 on:
@@ -12,12 +11,13 @@ jobs:
   test:
     name: CI test
     runs-on: ubuntu-latest
-    env: 
-      GAP_PKGS_TO_CLONE: nagygp/glabella
-      GAP_PKGS_TO_BUILD: "io profiling glabella"
 
     steps:
       - uses: actions/checkout@v2
-      - uses: gap-actions/setup-gap-for-packages@v1
+      - name: Setup GAP for packages
+        uses: gap-actions/setup-gap-for-packages@v1
+        env: 
+          GAP_PKGS_TO_CLONE: nagygp/glabella
+          GAP_PKGS_TO_BUILD: "io profiling glabella"
       - uses: gap-actions/run-test-for-packages@v1
 
