@@ -32,11 +32,12 @@ jobs:
       - name: "Install glabella"
         run:  | 
           cd glabella
-          ls -l
           ./autogen.sh
           ./configure --with-gaproot=/home/runner/gap
           make
           cd ..
+          ls -l
+          ls -l /home/runner/gap
           ln -f -s /home/runner/work/IncidenceStructures/IncidenceStructures/glabella /home/runner/gap/pkg/
         shell: bash
       - uses: gap-actions/run-test-for-packages@v1
