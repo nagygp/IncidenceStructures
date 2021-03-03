@@ -31,11 +31,11 @@ jobs:
       - uses: gap-actions/setup-gap-for-packages@v1
       - name: "Install glabella"
         run:  | 
-          cd /home/runner/work/glabella
+          cd glabella
           ./configure --with-gaproot=/home/runner/gap
           make
-          ln -f -s /home/runner/work/glabella gaproot/pkg/
-          cd /home/runner/work/IncidenceStructures/IncidenceStructures
+          ln -f -s /home/runner/work/IncidenceStructures/IncidenceStructures/glabella gaproot/pkg/
+          cd ..
         shell: bash
       - uses: gap-actions/run-test-for-packages@v1
 
