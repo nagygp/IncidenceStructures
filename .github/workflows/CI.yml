@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master # change this to 'main' if necessary!
+      - stable-4.11
   pull_request:
 
 jobs:
