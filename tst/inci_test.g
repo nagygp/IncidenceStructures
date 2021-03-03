@@ -1,4 +1,4 @@
-SizeScreen([72]);
+SizeScreen([72,23]);
 
 LoadPackage("IncidenceStructures", false);
 

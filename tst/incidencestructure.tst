@@ -15,8 +15,8 @@
 ##  The argument of STOP_TEST may be an arbitrary identifier string.
 ## 
 gap> START_TEST("IncidenceStructures package: incidencestructure.tst");
-gap> SizeScreen([72]);
-[ 72, 40 ]
+gap> SizeScreen([72,23]);
+[ 72, 23 ]
 gap> LoadPackage("IncidenceStructures", false);
 true
 gap> 
