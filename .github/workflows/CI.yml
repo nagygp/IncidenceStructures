@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Setup GAP for packages
         uses: gap-actions/setup-gap-for-packages@v1
-        env: 
+        with: 
           GAP_PKGS_TO_CLONE: nagygp/glabella
           GAP_PKGS_TO_BUILD: "io profiling glabella"
       - uses: gap-actions/run-test-for-packages@v1
