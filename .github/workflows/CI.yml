@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - master # change this to 'main' if necessary!
-      - stable-4.11
   pull_request:
 
 jobs:
@@ -20,5 +19,6 @@ jobs:
         with: 
           GAP_PKGS_TO_CLONE: nagygp/glabella
           GAP_PKGS_TO_BUILD: "io profiling glabella"
+          GAPBRANCH: stable-4.11
       - uses: gap-actions/run-test-for-packages@v1
 
