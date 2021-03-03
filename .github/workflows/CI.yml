@@ -25,13 +25,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: gap-actions/setup-gap-for-packages@v1
-      - name: "Download glabella"
-        uses: actions/checkout@v2
-        with: 
-          repository: nagygp/glabella
       - name: "Install glabella"
         run:  | 
-          echo "gaproot: {$GAPROOT}" && pwd
+          cd /home/runner/work
+          git clone https://github.com/nagygp/glabella.git
+          cd glabella 
+          ./configure --with-gaproot=/home/runner/gap
+          make
+          ln -f -s /home/runner/work/glabella gaproot/pkg/
+          cd /home/runner/work/IncidenceStructures/IncidenceStructures
         shell: bash
       - uses: gap-actions/run-test-for-packages@v1
 
