@@ -32,6 +32,7 @@ jobs:
       - name: "Install glabella"
         run:  | 
           cd glabella
+          ls -l
           ./configure --with-gaproot=/home/runner/gap
           make
           ln -f -s /home/runner/work/IncidenceStructures/IncidenceStructures/glabella gaproot/pkg/
