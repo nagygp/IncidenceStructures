@@ -23,13 +23,19 @@ jobs:
             ABI: 32
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          path: main
+      - name: Checkout glabella
+        uses: actions/checkout@v2
+        with:
+          repository: nagygp/glabella
+          path: glabella
       - uses: gap-actions/setup-gap-for-packages@v1
       - name: "Install glabella"
         run:  | 
-          cd /home/runner/work
-          git clone https://github.com/nagygp/glabella.git
-          cd glabella 
+          cd /home/runner/work/glabella
           ./configure --with-gaproot=/home/runner/gap
           make
           ln -f -s /home/runner/work/glabella gaproot/pkg/
