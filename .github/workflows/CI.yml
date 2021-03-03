@@ -17,10 +17,6 @@ jobs:
       matrix:
         gap-branch:
           - master
-        ABI: ['']
-        include:
-          - gap-branch: master
-            ABI: 32
 
     steps:
       - name: Checkout
