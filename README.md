@@ -1,3 +1,6 @@
+[![Build Status](https://github.com/nagygp/IncidenceStructures/workflows/CI/badge.svg?branch=master)](https://github.com/nagygp/IncidenceStructures/actions?query=workflow%3ACI+branch%3Amaster)
+[![Code Coverage](https://codecov.io/github/nagygp/IncidenceStructures/coverage.svg?branch=master&token=)](https://codecov.io/gh/nagygp/IncidenceStructures)
+
 # The GAP package IncidenceStructures
 
 GAP implementation of abstract incidence structures
