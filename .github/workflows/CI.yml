@@ -1,3 +1,20 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 name: CI
 
 # Trigger the workflow on push or pull request
@@ -10,6 +27,9 @@ jobs:
   test:
     name: ${{ matrix.gap-branch }} ${{ matrix.ABI }}
     runs-on: ubuntu-latest
+    env: 
+      GAP_PKGS_TO_CLONE: nagygp/glabella
+      GAP_PKGS_TO_BUILD: "io profiling glabella"
     # Don't run this twice on PRs for branches pushed to the same repository
     if: ${{ !(github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository) }}
     strategy:
@@ -23,20 +43,6 @@ jobs:
         uses: actions/checkout@v2
         with:
           path: main
-      - name: Checkout glabella
-        uses: actions/checkout@v2
-        with:
-          repository: nagygp/glabella
-          path: glabella
       - uses: gap-actions/setup-gap-for-packages@v1
-      - name: "Install glabella"
-        run:  | 
-          cd glabella
-          ./autogen.sh
-          ./configure --with-gaproot=/home/runner/gap
-          make
-          cd ..
-          ls -l gaproot/pkg/
-        shell: bash
       - uses: gap-actions/run-test-for-packages@v1
 
