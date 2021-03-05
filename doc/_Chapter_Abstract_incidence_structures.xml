@@ -189,8 +189,8 @@ In this case, the two incidence structures are said to be <Emph>isomorphic</Emph
    Canonocal labellings, automorphisms and isomorphisms of incidence structures are  
    computed with the help of their <Emph>incidence graphs</Emph>, which is are bipartite graphs
    with upper vertices the points and lower vertices the blocks. The computation
-   is done using the &GAP; package <Package>BlissInterface</Package> <Cite 
-   Key="BlissInterface0.2" />.
+   is done using the &GAP; package <Package>glabella</Package> <Cite 
+   Key="glabella0.31" />.
  </Description>
 </ManSection>
 
@@ -245,7 +245,7 @@ gap> t:=IncidenceStructureByBlocks( "rozi",
 >     ["or","iz","rz","oi","ir","oz"] );
 <Incidence structure on 4 points>
 gap> Isomorphism@IncidenceStructures(s,t);
-#I  GraphCanonicalLabelling@glabella called
+#I  GraphCanonicalLabellingNC@glabella called
 #I  <outneigh> parameter for glabella command: [ [  ], [  ], [  ], [  ], [ 2, 3 ], [ 1, 4 ], [ 3, 4 ], [ 1, 2 ], 
   [ 1, 3 ], [ 2, 4 ] ]
 #I  <iso>: ( 1, 3, 4)( 6, 7, 9, 8,10)

@@ -55,7 +55,7 @@ ArchiveFormats := ".tar.gz",
 ##
 Status := "dev",
 
-AbstractHTML   :=  "",
+AbstractHTML   :=  "This is a GAP package containing methods for finite abstract incidence structures.",
 
 PackageDoc := rec(
   BookName  := "IncidenceStructures",

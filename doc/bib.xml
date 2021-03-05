@@ -22,19 +22,19 @@
   <other type="pages">xx+1100</other>
 </book></entry>
 
-<entry id="BlissInterface0.2"><manual>
+<entry id="glabella0.31"><misc>
   <author>
-    <name><first>G. P.</first><last>Nagy</last></name>
-  </author>  
-  <title><C>BlissInterface</C>, Low level interface to the bliss graph
-      automorphism tool, <C>V</C>ersion 0.2</title>
-  <organization>Budapest University of Technology</organization>
-  <year>2019</year>
-  <note>GAP package, <URL>https://nagygp.github.io/BlissInterface/</URL></note>
-  <url>https://nagygp.github.io/BlissInterface/</url>
-  <other type="month">Aug</other>
-  <other type="printedkey">Nag19</other>
-</manual></entry>
+    <name><first>Gábor P.</first><last>Nagy</last></name>
+  </author>
+  <title><C>glabella</C>, Low level interfaces to graph automorphism and canonical labelling tools,
+         <C>V</C>ersion 0.31</title>
+  <howpublished><URL>https://nagygp.github.io/glabella/</URL></howpublished>
+  <month>Mar</month>
+  <year>2021</year>
+  <note>GAP package</note>
+  <keywords>bliss; nauty; graph isomorphism; canonical labelling; automorphism group</keywords>
+</misc></entry>
+
 
 
 </file>
