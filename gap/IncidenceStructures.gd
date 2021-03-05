@@ -114,7 +114,7 @@ DeclareAttribute( "AutomorphismGroup@", IsIncidenceStructure );
 #! @Returns
 #!   The hash value of the incidence structure <A>s</A>.
 #! @Description
-#!   The function computes the value of <A>s</A> with the help of canonical labeling of 
+#!   The function computes the value of <A>s</A> with the help of canonical labelling of 
 #!   its incidence digraph. 
 DeclareAttribute( "HashValue", IsIncidenceStructure );
 

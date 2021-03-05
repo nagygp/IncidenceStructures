@@ -49,7 +49,7 @@ gap> TraceOfBlock(s,'c');
 gap> 
 gap> SetInfoLevel(InfoIncidenceStructures,1);
 gap> CanonicalLabellingOfIncidenceStructure(s);
-#I  GraphCanonicalLabelingNC@glabella called
+#I  GraphCanonicalLabellingNC@glabella called
 (1,4)(2,3)(5,10,9)(6,8)
 gap> StructureDescription(AutomorphismGroup@IncidenceStructures(s));
 "S4"
@@ -59,7 +59,7 @@ gap> t:=IncidenceStructureByBlocks( "rozi",
 >     ["or","iz","rz","oi","ir","oz"] );
 <Incidence structure on 4 points>
 gap> Isomorphism@IncidenceStructures(s,t);
-#I  GraphCanonicalLabelingNC@glabella called
+#I  GraphCanonicalLabellingNC@glabella called
 #I  <outneigh> parameter for glabella command: [ [  ], [  ], [  ], [  ], [ 2, 3 ], [ 1, 4 ], [ 3, 4 ], [ 1, 2 ], 
   [ 1, 3 ], [ 2, 4 ] ]
 #I  <iso>: ( 1, 3, 4)( 6, 7, 9, 8,10)
