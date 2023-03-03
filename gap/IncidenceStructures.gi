@@ -38,6 +38,7 @@ function( pts, bls )
 	if not ForAll( bls, b -> IsSubset( pts, b ) ) then
 		Error( "IncStr: the elements of <2> must be subsets of <1>" );
 	fi;
+	Apply( bls, function(x) if not IsPlistRep(x) then return PlainListCopy(x); else return x; fi; end );
     bmat := List( bls, b -> BlistList( pts, b ) );
 	s := IncidenceStructureByIncidenceMatrix( pts, bls, bmat );
 	SetIsIndexBasedIncidenceStructure( s, pts = [ 1..Length(pts) ] );
