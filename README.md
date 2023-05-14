@@ -7,7 +7,7 @@ GAP implementation of abstract incidence structures
 
 ## Contact
 
-Maintainer: [Gábor P. Nagy](https://algebra.math.bme.hu/nagy-gabor), Budapest University of Technology, Hungary.
+Maintainer: [Gábor P. Nagy](https://algebra.math.bme.hu/nagy-gabor-peter), Budapest University of Technology, Hungary.
 
 Package web page: [https://nagygp.github.io/IncidenceStructures/](https://nagygp.github.io/IncidenceStructures/).
 
