@@ -132,7 +132,7 @@ end );
 InstallMethod( CanonicalLabellingOfIncidenceStructure, "for an abstract incidence structure",
     [ IsIncidenceStructure ],
 function( s )
-    local nrp, nrb, outneigh, ucolours, lcolours, cl;
+    local nrp, nrb, outneigh, i, ucolours, lcolours, cl;
 	nrp := Length( PointsOfIncidenceStructure ( s ) );
 	nrb := Length( BlocksOfIncidenceStructure ( s ) );
 	if HasPointColoringOfIncidenceStructure( s ) then
@@ -151,6 +151,9 @@ function( s )
 		outneigh := List( s!.bmat, r -> ListBlist( [1..nrp], r ) );
 	fi;
 	outneigh := Concatenation( List([1..nrp], i->[] ), outneigh );
+	for i in [1..Length(outneigh)] do
+		if not IsPlistRep( outneigh[i] ) then outneigh[i] := PlainListCopy( outneigh[i] ); fi;
+	od;
 	Info( InfoIncidenceStructures, 1, "GraphCanonicalLabellingNC@glabella called" );
 	Info( InfoIncidenceStructures, 2, "<outneigh> parameter for glabella command: ", outneigh );
 	cl := GraphCanonicalLabellingNC@glabella( nrp+nrb, outneigh, Concatenation(ucolours, lcolours), true, "bliss" );
